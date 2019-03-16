@@ -1,0 +1,313 @@
+type Auth {
+  apikey: String!
+  userkey: String!
+  username: String!
+}
+
+type BasicEpisode {
+  absoluteNumber: Int!
+  airedEpisodeNumber: Int!
+  airedSeason: Int!
+  dvdEpisodeNumber: Int!
+  dvdSeason: Int!
+  episodeName: String!
+  firstAired: String!
+  id: Int!
+  language: EpisodeLanguageInfo!
+  lastUpdated: Int!
+  overview: String!
+}
+
+type Conflict {
+  # Conflict
+  Error: String!
+}
+
+type Episode {
+  absoluteNumber: Int!
+  airedEpisodeNumber: Int!
+  airedSeason: Int!
+  airsAfterSeason: Int!
+  airsBeforeEpisode: Int!
+  airsBeforeSeason: Int!
+  director: String!
+  directors: [String]!
+  dvdChapter: Float!
+  dvdDiscid: String!
+  dvdEpisodeNumber: Float!
+  dvdSeason: Int!
+  episodeName: String!
+  filename: String!
+  firstAired: String!
+  guestStars: [String]!
+  id: Int!
+  imdbId: String!
+  lastUpdated: Int!
+  lastUpdatedBy: String!
+  overview: String!
+  productionCode: String!
+  seriesId: String!
+  showUrl: String!
+  siteRating: Float!
+  siteRatingCount: Int!
+  thumbAdded: String!
+  thumbAuthor: Int!
+  thumbHeight: String!
+  thumbWidth: String!
+  writers: [String]!
+}
+
+type EpisodeDataQueryParams {
+  data: [String]!
+}
+
+type EpisodeLanguageInfo {
+  episodeName: String!
+  overview: String!
+}
+
+type EpisodeRecordData {
+  data: Episode!
+  errors: JSONErrors!
+}
+
+type FilterKeys {
+  data: [String]!
+}
+
+type JSONErrors {
+  # Invalid filters passed to route
+  invalidFilters: [String]!
+  # Invalid language or translation missing
+  invalidLanguage: String!
+  # Invalid query params passed to route
+  invalidQueryParams: [String]!
+}
+
+type Language {
+  abbreviation: String!
+  englishName: String!
+  id: Int!
+  name: String!
+}
+
+type LanguageData {
+  data: [Language]!
+}
+
+type Links {
+  first: Int!
+  last: Int!
+  next: Int!
+  previous: Int!
+}
+
+type NotAuthorized {
+  # Not Authorized
+  Error: String!
+}
+
+type NotFound {
+  # Not Found
+  Error: String!
+}
+
+type Series {
+  added: String!
+  airsDayOfWeek: String!
+  airsTime: String!
+  aliases: [String]!
+  banner: String!
+  firstAired: String!
+  genre: [String]!
+  id: Int!
+  imdbId: String!
+  lastUpdated: Int!
+  network: String!
+  networkId: String!
+  overview: String!
+  rating: String!
+  runtime: String!
+  seriesId: String!
+  seriesName: String!
+  siteRating: Float!
+  siteRatingCount: Int!
+  slug: String!
+  status: String!
+  zap2itId: String!
+}
+
+type SeriesActors {
+  data: [SeriesActorsData]!
+  errors: JSONErrors!
+}
+
+type SeriesActorsData {
+  id: Int!
+  image: String!
+  imageAdded: String!
+  imageAuthor: Int!
+  lastUpdated: String!
+  name: String!
+  role: String!
+  seriesId: Int!
+  sortOrder: Int!
+}
+
+type SeriesData {
+  data: Series!
+  # Informative error messages (optional)
+  errors: JSONErrors!
+}
+
+type SeriesEpisodes {
+  data: [Episode]!
+  errors: JSONErrors!
+  links: Links!
+}
+
+type SeriesEpisodesQuery {
+  data: [Episode]!
+  errors: JSONErrors!
+  links: Links!
+}
+
+type SeriesEpisodesQueryParams {
+  data: [String]!
+}
+
+type SeriesEpisodesSummary {
+  # Number of all aired episodes for this series
+  airedEpisodes: String!
+  airedSeasons: [String]!
+  # Number of all dvd episodes for this series
+  dvdEpisodes: String!
+  dvdSeasons: [String]!
+}
+
+type SeriesImageQueryResult {
+  fileName: String!
+  id: Int!
+  keyType: String!
+  languageId: Int!
+  ratingsInfo: RatingsInfo!
+  resolution: String!
+  subKey: String!
+  thumbnail: String!
+}
+
+type SeriesImageQueryResults {
+  data: [SeriesImageQueryResult]!
+  errors: JSONErrors!
+}
+
+type SeriesImagesCount {
+  fanart: Int!
+  poster: Int!
+  season: Int!
+  seasonwide: Int!
+  series: Int!
+}
+
+type SeriesImagesCounts {
+  data: SeriesImagesCount!
+}
+
+type SeriesImagesQueryParam {
+  keyType: String!
+  languageId: String!
+  resolution: [String]!
+  subKey: [String]!
+}
+
+type SeriesImagesQueryParams {
+  data: [SeriesImagesQueryParam]!
+}
+
+type SeriesSearchResult {
+  aliases: [String]!
+  banner: String!
+  firstAired: String!
+  id: Int!
+  network: String!
+  overview: String!
+  seriesName: String!
+  slug: String!
+  status: String!
+}
+
+type SeriesSearchResults {
+  data: [SeriesSearchResult]!
+}
+
+type Token {
+  token: String!
+}
+
+type Update {
+  id: Int!
+  lastUpdated: Int!
+}
+
+type UpdateData {
+  data: [Update]!
+  errors: JSONErrors!
+}
+
+type UpdateDataQueryParams {
+  data: [String]!
+}
+
+type User {
+  favoritesDisplaymode: String!
+  language: String!
+  userName: String!
+}
+
+type UserData {
+  data: User!
+}
+
+type UserFavorites {
+  favorites: [String]!
+}
+
+type UserFavoritesData {
+  data: UserFavorites!
+  errors: JSONErrors!
+}
+
+type UserRatings {
+  rating: Int!
+  ratingItemId: Int!
+  ratingType: String!
+}
+
+type UserRatingsData {
+  data: [UserRatings]!
+  errors: JSONErrors!
+  links: Links!
+}
+
+type UserRatingsDataNoLinks {
+  data: [UserRatings]!
+}
+
+type UserRatingsDataNoLinksEmptyArray {
+  data: [String]!
+}
+
+type UserRatingsQueryParams {
+  data: [String]!
+}
+
+type RatingsInfo {
+  # Average rating for the given record.
+  average: Float!
+  # Number of ratings for the given record.
+  count: Int!
+}
+
+type Query {
+  series(id: Int!): Series
+}
