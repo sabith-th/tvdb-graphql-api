@@ -25,6 +25,14 @@ class TvdbAPI extends RESTDataSource {
   async searchSeries(name) {
     return this.get('search/series', { name });
   }
+
+  async getActors(id) {
+    return this.get(`series/${id}/actors`);
+  }
+
+  async getSummary(id) {
+    return this.get(`series/${id}/episodes/summary`);
+  }
 }
 
 export default TvdbAPI;

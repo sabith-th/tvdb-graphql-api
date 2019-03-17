@@ -139,7 +139,7 @@ type Series {
 
 type SeriesActors {
   data: [SeriesActorsData]!
-  errors: JSONErrors!
+  errors: JSONErrors
 }
 
 type SeriesActorsData {
@@ -157,7 +157,7 @@ type SeriesActorsData {
 type SeriesData {
   data: Series!
   # Informative error messages (optional)
-  errors: JSONErrors!
+  errors: JSONErrors
 }
 
 type SeriesEpisodes {
@@ -308,10 +308,17 @@ type RatingsInfo {
   count: Int!
 }
 
+type SeriesResponse {
+  series: Series!
+  actors: [SeriesActorsData]!
+  episodesSummary: SeriesEpisodesSummary
+}
+
 type Query {
   refreshToken: Token
   series(id: Int!): Series
   searchSeries(name: String!): [SeriesSearchResult]!
+  seriesInfo(id: Int!): SeriesResponse
 }
 
 type Mutation {

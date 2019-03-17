@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon -e .graphql --exec babel-node src/index.js"
+    "start": "nodemon -e .js,.graphql --exec babel-node src/index.js"
   },
   "dependencies": {
     "apollo-datasource-rest": "^0.3.2",
