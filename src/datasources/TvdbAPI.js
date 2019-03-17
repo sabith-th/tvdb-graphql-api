@@ -19,7 +19,11 @@ class TvdbAPI extends RESTDataSource {
   }
 
   async refreshToken() {
-    return this.get('/refresh_token');
+    return this.get('refresh_token');
+  }
+
+  async searchSeries(name) {
+    return this.get('search/series', { name });
   }
 }
 

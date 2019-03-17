@@ -230,7 +230,7 @@ type SeriesSearchResult {
   firstAired: String!
   id: Int!
   network: String!
-  overview: String!
+  overview: String
   seriesName: String!
   slug: String!
   status: String!
@@ -311,6 +311,7 @@ type RatingsInfo {
 type Query {
   refreshToken: Token
   series(id: Int!): Series
+  searchSeries(name: String!): [SeriesSearchResult]!
 }
 
 type Mutation {
