@@ -1,4 +1,4 @@
-type Auth {
+input Auth {
   apikey: String!
   userkey: String!
   username: String!
@@ -309,5 +309,10 @@ type RatingsInfo {
 }
 
 type Query {
+  refreshToken: Token
   series(id: Int!): Series
+}
+
+type Mutation {
+  login(auth: Auth!): Token
 }

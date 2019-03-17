@@ -13,6 +13,14 @@ class TvdbAPI extends RESTDataSource {
   async getSeries(id) {
     return this.get(`series/${id}`);
   }
+
+  async login(apikey, userkey, username) {
+    return this.post('login', { apikey, userkey, username });
+  }
+
+  async refreshToken() {
+    return this.get('/refresh_token');
+  }
 }
 
 export default TvdbAPI;
