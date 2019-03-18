@@ -33,6 +33,10 @@ class TvdbAPI extends RESTDataSource {
   async getSummary(id) {
     return this.get(`series/${id}/episodes/summary`);
   }
+
+  async getEpisode(id) {
+    return this.get(`episodes/${id}`);
+  }
 }
 
 export default TvdbAPI;

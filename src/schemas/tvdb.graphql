@@ -27,33 +27,33 @@ type Episode {
   absoluteNumber: Int!
   airedEpisodeNumber: Int!
   airedSeason: Int!
-  airsAfterSeason: Int!
-  airsBeforeEpisode: Int!
-  airsBeforeSeason: Int!
+  airsAfterSeason: Int
+  airsBeforeEpisode: Int
+  airsBeforeSeason: Int
   director: String!
   directors: [String]!
-  dvdChapter: Float!
-  dvdDiscid: String!
-  dvdEpisodeNumber: Float!
-  dvdSeason: Int!
+  dvdChapter: Float
+  dvdDiscid: String
+  dvdEpisodeNumber: Float
+  dvdSeason: Int
   episodeName: String!
   filename: String!
   firstAired: String!
   guestStars: [String]!
   id: Int!
   imdbId: String!
-  lastUpdated: Int!
-  lastUpdatedBy: String!
+  lastUpdated: Int
+  lastUpdatedBy: String
   overview: String!
-  productionCode: String!
+  productionCode: String
   seriesId: String!
-  showUrl: String!
-  siteRating: Float!
-  siteRatingCount: Int!
-  thumbAdded: String!
-  thumbAuthor: Int!
-  thumbHeight: String!
-  thumbWidth: String!
+  showUrl: String
+  siteRating: Float
+  siteRatingCount: Int
+  thumbAdded: String
+  thumbAuthor: Int
+  thumbHeight: String
+  thumbWidth: String
   writers: [String]!
 }
 
@@ -319,6 +319,7 @@ type Query {
   series(id: Int!): Series
   searchSeries(name: String!): [SeriesSearchResult]!
   seriesInfo(id: Int!): SeriesResponse
+  episode(id: Int!): Episode
 }
 
 type Mutation {
