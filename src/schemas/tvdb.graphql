@@ -314,12 +314,27 @@ type SeriesResponse {
   episodesSummary: SeriesEpisodesSummary
 }
 
+enum KeyType {
+  FANART
+  POSTER
+  SEASON
+  SERIES
+}
+
 type Query {
   refreshToken: Token
   series(id: Int!): Series
   searchSeries(name: String!): [SeriesSearchResult]!
   seriesInfo(id: Int!): SeriesResponse
   episode(id: Int!): Episode
+  seriesImages(
+    seriesId: Int!
+    keyType: KeyType
+    "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"
+    subKey: String
+    "Resolution to filter by (1280x1024, for example)"
+    resolution: String
+  ): [SeriesImageQueryResult]
 }
 
 type Mutation {

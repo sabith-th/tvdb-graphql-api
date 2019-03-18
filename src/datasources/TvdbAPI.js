@@ -37,6 +37,20 @@ class TvdbAPI extends RESTDataSource {
   async getEpisode(id) {
     return this.get(`episodes/${id}`);
   }
+
+  async getImages(id, keyType, subKey, resolution) {
+    const params = {};
+    if (keyType) {
+      params.keyType = keyType.toLowerCase();
+    }
+    if (subKey) {
+      params.subKey = subKey;
+    }
+    if (resolution) {
+      params.resolution = resolution;
+    }
+    return this.get(`series/${id}/images/query`, { ...params });
+  }
 }
 
 export default TvdbAPI;
