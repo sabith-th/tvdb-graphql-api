@@ -19,6 +19,13 @@ const seriesResolver = {
         episodesSummary: summary.data
       };
     }
+  },
+  SeriesResponse: {
+    seriesImages: async (parent, { keyType, subKey, resolution }, { dataSources }) => {
+      const { id } = parent.series;
+      const response = await dataSources.tvdbAPI.getImages(id, keyType, subKey, resolution);
+      return response.data;
+    }
   }
 };
 

@@ -312,6 +312,13 @@ type SeriesResponse {
   series: Series!
   actors: [SeriesActorsData]!
   episodesSummary: SeriesEpisodesSummary
+  seriesImages(
+    keyType: KeyType
+    "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"
+    subKey: String
+    "Resolution to filter by (1280x1024, for example)"
+    resolution: String
+  ): [SeriesImageQueryResult]
 }
 
 enum KeyType {
