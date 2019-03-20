@@ -334,6 +334,7 @@ type Query {
   searchSeries(name: String!): [SeriesSearchResult]!
   seriesInfo(id: Int!): SeriesResponse
   episode(id: Int!): Episode
+  seriesEpisodes(id: Int!, page: String): [Episode]!
   seriesImages(
     seriesId: Int!
     keyType: KeyType
@@ -342,6 +343,16 @@ type Query {
     "Resolution to filter by (1280x1024, for example)"
     resolution: String
   ): [SeriesImageQueryResult]
+  seriesEpisodesQuery(
+    id: Int!
+    absoluteNumber: String
+    airedSeason: String
+    airedEpisode: String
+    dvdSeason: String
+    dvdEpisode: String
+    imdbId: String
+    page: String
+  ): [Episode]!
 }
 
 type Mutation {
