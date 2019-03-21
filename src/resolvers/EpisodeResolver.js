@@ -4,16 +4,12 @@ const EpisodeResolver = {
       const response = await dataSources.tvdbAPI.getEpisode(id);
       return response.data;
     },
-    seriesEpisodes: async (_, { id, page }, { dataSources }) => {
-      const response = await dataSources.tvdbAPI.getEpisodes(id, page);
-      return response.data;
-    },
-    seriesEpisodesQuery: async (
+    seriesEpisodes: async (
       _,
       { id, absoluteNumber, airedSeason, airedEpisode, dvdSeason, dvdEpisode, imdbId, page },
       { dataSources }
     ) => {
-      const response = await dataSources.tvdbAPI.getEpisodesWithQuery(
+      const response = await dataSources.tvdbAPI.getEpisodes(
         id,
         absoluteNumber,
         airedSeason,

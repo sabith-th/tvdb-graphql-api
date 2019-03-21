@@ -48,12 +48,7 @@ class TvdbAPI extends RESTDataSource {
     return this.get(`series/${id}/images/query`, { ...params });
   }
 
-  async getEpisodes(id, page) {
-    const params = Object.assign({}, page && { page });
-    return this.get(`series/${id}/episodes`, { ...params });
-  }
-
-  async getEpisodesWithQuery(
+  async getEpisodes(
     id,
     absoluteNumber,
     airedSeason,
@@ -73,7 +68,14 @@ class TvdbAPI extends RESTDataSource {
       imdbId && { imdbId },
       page && { page }
     );
-    return this.get(`series/${id}/episodes/query`, { ...params });
+    let query;
+    const keys = Object.keys(params);
+    if (keys.length === 0 || (keys[0] === 'page' && keys.length === 1)) {
+      query = `series/${id}/episodes`;
+    } else {
+      query = `series/${id}/episodes/query`;
+    }
+    return this.get(query, { ...params });
   }
 }
 

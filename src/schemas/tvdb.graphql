@@ -312,13 +312,22 @@ type SeriesResponse {
   series: Series!
   actors: [SeriesActorsData]!
   episodesSummary: SeriesEpisodesSummary
-  seriesImages(
+  images(
     keyType: KeyType
     "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"
     subKey: String
     "Resolution to filter by (1280x1024, for example)"
     resolution: String
   ): [SeriesImageQueryResult]
+  episodes(
+    absoluteNumber: String
+    airedSeason: String
+    airedEpisode: String
+    dvdSeason: String
+    dvdEpisode: String
+    imdbId: String
+    page: String
+  ): [Episode]!
 }
 
 enum KeyType {
@@ -334,7 +343,6 @@ type Query {
   searchSeries(name: String!): [SeriesSearchResult]!
   seriesInfo(id: Int!): SeriesResponse
   episode(id: Int!): Episode
-  seriesEpisodes(id: Int!, page: String): [Episode]!
   seriesImages(
     seriesId: Int!
     keyType: KeyType
@@ -343,7 +351,7 @@ type Query {
     "Resolution to filter by (1280x1024, for example)"
     resolution: String
   ): [SeriesImageQueryResult]
-  seriesEpisodesQuery(
+  seriesEpisodes(
     id: Int!
     absoluteNumber: String
     airedSeason: String
