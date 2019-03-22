@@ -48,7 +48,7 @@ class TvdbAPI extends RESTDataSource {
     return this.get(`series/${id}/images/query`, { ...params });
   }
 
-  async getEpisodes(
+  async getEpisodes({
     id,
     absoluteNumber,
     airedSeason,
@@ -57,7 +57,7 @@ class TvdbAPI extends RESTDataSource {
     dvdEpisode,
     imdbId,
     page
-  ) {
+  }) {
     const params = Object.assign(
       {},
       absoluteNumber && { absoluteNumber },

@@ -1,3 +1,13 @@
+const getNextEpisode = async (id, latestSeason, dataSources) => {
+  const latestEpisodes = await dataSources.tvdbAPI.getEpisodes({ id, airedSeason: latestSeason });
+  const nextEpisodes = latestEpisodes.data.filter(episode => {
+    const airDate = new Date(episode.firstAired).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
+    return airDate >= today;
+  });
+  return nextEpisodes[0];
+};
+
 const seriesResolver = {
   Query: {
     series: async (_, { id }, { dataSources }) => {
@@ -19,8 +29,13 @@ const seriesResolver = {
     },
     episodesSummary: async (parent, _, { dataSources }) => {
       const { id } = parent;
-      const response = dataSources.tvdbAPI.getSummary(id);
-      return response.data;
+      const response = await dataSources.tvdbAPI.getSummary(id);
+      const latestSeason = Math.max(...response.data.airedSeasons);
+      const nextEpisode = await getNextEpisode(id, latestSeason, dataSources);
+      return {
+        ...response.data,
+        nextEpisode
+      };
     },
     images: async (parent, { keyType, subKey, resolution }, { dataSources }) => {
       const { id } = parent;
@@ -33,7 +48,7 @@ const seriesResolver = {
       { dataSources }
     ) => {
       const { id } = parent;
-      const response = await dataSources.tvdbAPI.getEpisodes(
+      const response = await dataSources.tvdbAPI.getEpisodes({
         id,
         absoluteNumber,
         airedSeason,
@@ -42,7 +57,7 @@ const seriesResolver = {
         dvdEpisode,
         imdbId,
         page
-      );
+      });
       return response.data;
     }
   }

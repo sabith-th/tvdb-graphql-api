@@ -308,10 +308,20 @@ type RatingsInfo {
   count: Int!
 }
 
+type EpisodesSummary {
+  # Number of all aired episodes for this series
+  airedEpisodes: String!
+  airedSeasons: [String]!
+  # Number of all dvd episodes for this series
+  dvdEpisodes: String!
+  dvdSeasons: [String]!
+  nextEpisode: Episode
+}
+
 type SeriesResponse {
   series: Series!
   actors: [SeriesActorsData]!
-  episodesSummary: SeriesEpisodesSummary
+  episodesSummary: EpisodesSummary
   images(
     keyType: KeyType
     "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"

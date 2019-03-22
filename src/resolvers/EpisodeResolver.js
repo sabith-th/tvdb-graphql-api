@@ -9,7 +9,7 @@ const EpisodeResolver = {
       { id, absoluteNumber, airedSeason, airedEpisode, dvdSeason, dvdEpisode, imdbId, page },
       { dataSources }
     ) => {
-      const response = await dataSources.tvdbAPI.getEpisodes(
+      const response = await dataSources.tvdbAPI.getEpisodes({
         id,
         absoluteNumber,
         airedSeason,
@@ -18,7 +18,7 @@ const EpisodeResolver = {
         dvdEpisode,
         imdbId,
         page
-      );
+      });
       return response.data;
     }
   }
