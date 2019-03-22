@@ -1,5 +1,4 @@
 import { ApolloServer } from 'apollo-server';
-import 'dotenv/config';
 import TvdbAPI from './datasources/TvdbAPI';
 import resolvers from './resolvers/index';
 import typeDefs from './schemas/index';
@@ -12,9 +11,10 @@ const server = new ApolloServer({
       tvdbAPI: new TvdbAPI()
     };
   },
-  context: () => {
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
     return {
-      token: process.env.TOKEN
+      token
     };
   }
 });
