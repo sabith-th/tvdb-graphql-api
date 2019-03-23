@@ -1,5 +1,5 @@
 module.exports = {
   service: {
-    localSchemaFile: './src/schemas/tv.graphql'
+    localSchemaFile: './src/schemas/tvdb.graphql'
   }
 };
