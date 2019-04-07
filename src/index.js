@@ -3,6 +3,7 @@ import 'dotenv/config';
 import TvdbAPI from './datasources/TvdbAPI';
 import resolvers from './resolvers/index';
 import typeDefs from './schemas/index';
+import tokenRefresher, { setNewToken } from './tokenRefresher';
 
 const server = new ApolloServer({
   typeDefs,
@@ -13,7 +14,7 @@ const server = new ApolloServer({
     };
   },
   context: ({ req }) => {
-    const token = req.headers.authorization || '';
+    const token = req.headers.authorization || process.env.TOKEN || '';
     return {
       token
     };
@@ -28,3 +29,6 @@ const server = new ApolloServer({
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
+
+setNewToken();
+tokenRefresher.start();

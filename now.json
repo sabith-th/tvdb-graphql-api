@@ -3,6 +3,9 @@
   "builds": [{ "src": "dist/index.js", "use": "@now/node-server" }],
   "routes": [{ "src": "/.*", "dest": "dist/index.js" }],
   "env": {
-    "ENGINE_API_KEY": "@engine-api-key"
+    "ENGINE_API_KEY": "@engine-api-key",
+    "API_KEY": "@api-key",
+    "USER_KEY": "@user-key",
+    "USERNAME": "@username"
   }
 }

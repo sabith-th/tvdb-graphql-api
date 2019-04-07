@@ -16,6 +16,10 @@ var _index3 = require('./schemas/index');
 
 var _index4 = _interopRequireDefault(_index3);
 
+var _tokenRefresher = require('./tokenRefresher');
+
+var _tokenRefresher2 = _interopRequireDefault(_tokenRefresher);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const server = new _apolloServer.ApolloServer({
@@ -27,7 +31,7 @@ const server = new _apolloServer.ApolloServer({
     };
   },
   context: ({ req }) => {
-    const token = req.headers.authorization || '';
+    const token = req.headers.authorization || process.env.TOKEN || '';
     return {
       token
     };
@@ -42,3 +46,6 @@ const server = new _apolloServer.ApolloServer({
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
+
+(0, _tokenRefresher.setNewToken)();
+_tokenRefresher2.default.start();
