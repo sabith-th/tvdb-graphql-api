@@ -8,6 +8,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 const getNextEpisode = async (id, latestSeason, dataSources) => {
   const latestEpisodes = await dataSources.tvdbAPI.getEpisodes({ id, airedSeason: latestSeason });
+  latestEpisodes.data.sort((a, b) => {
+    if (a.firstAired && b.firstAired) {
+      return new Date(a.firstAired) - new Date(b.firstAired);
+    }
+    return 1;
+  });
   const nextEpisodes = latestEpisodes.data.filter(episode => {
     const airDate = new Date(episode.firstAired).setHours(0, 0, 0, 0);
     const today = new Date().setHours(0, 0, 0, 0);
@@ -38,10 +44,8 @@ const seriesResolver = {
     episodesSummary: async (parent, _, { dataSources }) => {
       const { id } = parent;
       const response = await dataSources.tvdbAPI.getSummary(id);
-      const latestSeason = Math.max(...response.data.airedSeasons);
-      const nextEpisode = await getNextEpisode(id, latestSeason, dataSources);
       return _extends({}, response.data, {
-        nextEpisode
+        id
       });
     },
     images: async (parent, { keyType, subKey, resolution }, { dataSources }) => {
@@ -62,6 +66,14 @@ const seriesResolver = {
         page
       });
       return response.data;
+    }
+  },
+  EpisodesSummary: {
+    nextEpisode: async (parent, _, { dataSources }) => {
+      const { airedSeasons, id } = parent;
+      const latestSeason = Math.max(...airedSeasons);
+      const nextEpisode = await getNextEpisode(id, latestSeason, dataSources);
+      return nextEpisode;
     }
   }
 };
