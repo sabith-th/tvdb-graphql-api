@@ -8,5 +8,5 @@
     "USER_KEY": "@user-key",
     "USERNAME": "@username"
   },
-  "alias": ["https://tvdb-graphql-api.sabith-th.now.sh"]
+  "alias": ["tvdb-graphql-api.sabith-th.now.sh"]
 }
