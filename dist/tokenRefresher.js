@@ -16,6 +16,7 @@ var _nodeCron2 = _interopRequireDefault(_nodeCron);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const setNewToken = exports.setNewToken = () => {
+  console.log('Setting new token');
   const tvdbAPI = 'https://api.thetvdb.com/login';
   const apiKey = process.env.API_KEY;
   const userKey = process.env.USER_KEY;
@@ -26,6 +27,7 @@ const setNewToken = exports.setNewToken = () => {
     username: userName
   }).then(res => {
     process.env.TOKEN = res.data.token;
+    console.log('New token set');
   }).catch(err => console.log(err));
 };
 

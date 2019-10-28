@@ -5,6 +5,8 @@ import resolvers from './resolvers/index';
 import typeDefs from './schemas/index';
 import tokenRefresher, { setNewToken } from './tokenRefresher';
 
+setNewToken();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -30,5 +32,4 @@ server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
-setNewToken();
 tokenRefresher.start();

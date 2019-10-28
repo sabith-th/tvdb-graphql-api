@@ -22,6 +22,8 @@ var _tokenRefresher2 = _interopRequireDefault(_tokenRefresher);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(0, _tokenRefresher.setNewToken)();
+
 const server = new _apolloServer.ApolloServer({
   typeDefs: _index4.default,
   resolvers: _index2.default,
@@ -47,5 +49,4 @@ server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
-(0, _tokenRefresher.setNewToken)();
 _tokenRefresher2.default.start();

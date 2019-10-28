@@ -2,6 +2,7 @@ import axios from 'axios';
 import cron from 'node-cron';
 
 export const setNewToken = () => {
+  console.log('Setting new token');
   const tvdbAPI = 'https://api.thetvdb.com/login';
   const apiKey = process.env.API_KEY;
   const userKey = process.env.USER_KEY;
@@ -14,6 +15,7 @@ export const setNewToken = () => {
     })
     .then(res => {
       process.env.TOKEN = res.data.token;
+      console.log('New token set');
     })
     .catch(err => console.log(err));
 };
