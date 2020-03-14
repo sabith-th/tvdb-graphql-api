@@ -30,6 +30,8 @@ const setNewToken = exports.setNewToken = async () => {
     if (response.status === 200) {
       process.env.TOKEN = response.data.token;
       console.log('New token set');
+    } else {
+      console.log(`Token fetching failed with status ${response.status} body : ${response.data}`);
     }
   } catch (e) {
     console.log('Error getting new token', e);
