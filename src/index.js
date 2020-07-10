@@ -12,23 +12,23 @@ const server = new ApolloServer({
   resolvers,
   dataSources: () => {
     return {
-      tvdbAPI: new TvdbAPI()
+      tvdbAPI: new TvdbAPI(),
     };
   },
   context: ({ req }) => {
     const token = req.headers.authorization || process.env.TOKEN || '';
     return {
-      token
+      token,
     };
   },
   engine: {
-    apiKey: process.env.ENGINE_API_KEY
+    apiKey: process.env.ENGINE_API_KEY,
   },
   introspection: true,
-  playground: true
+  playground: true,
 });
 
-server.listen().then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 

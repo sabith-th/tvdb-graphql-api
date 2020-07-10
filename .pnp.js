@@ -178,7 +178,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@apollographql-apollo-tools-npm-0.4.8-634f66fb5b-324d2a78e4.zip/node_modules/@apollographql/apollo-tools/",
           "packageDependencies": [
             ["@apollographql/apollo-tools", "npm:0.4.8"],
-            ["apollo-env", "npm:0.6.5"]
+            ["apollo-env", "npm:0.6.5"],
+            ["graphql", "npm:15.3.0"]
           ],
           "linkType": "HARD",
         }]
@@ -951,7 +952,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["apollo-graphql", "virtual:8f2e8626e4d179a81c4d4c382a276f9409bcb031f1518627c57ff4659ea9fb015d3f7366cfd8045f40a9c0e8f82d012b35e06ead44c157cfdfc56f74d3a19c17#npm:0.4.4"],
             ["apollo-server-caching", "npm:0.5.2"],
             ["apollo-server-env", "npm:2.4.5"],
-            ["apollo-server-errors", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:2.4.2"],
+            ["apollo-server-errors", "virtual:2be96bca9965f9e693ff702a628027df230e9cdb882240fad98c147cb641c34b549c392b038b7d55614d1a03ec64190ae9aee91958bc1def3ebbaceac9115251#npm:2.4.2"],
             ["apollo-server-plugin-base", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:0.9.1"],
             ["apollo-server-types", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:0.5.1"],
             ["async-retry", "npm:1.3.1"],
@@ -1061,7 +1062,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["apollo-engine-reporting", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:2.2.1"],
             ["apollo-server-caching", "npm:0.5.2"],
             ["apollo-server-env", "npm:2.4.5"],
-            ["apollo-server-errors", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:2.4.2"],
+            ["apollo-server-errors", "virtual:2be96bca9965f9e693ff702a628027df230e9cdb882240fad98c147cb641c34b549c392b038b7d55614d1a03ec64190ae9aee91958bc1def3ebbaceac9115251#npm:2.4.2"],
             ["apollo-server-plugin-base", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:0.9.1"],
             ["apollo-server-types", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:0.5.1"],
             ["apollo-tracing", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:0.11.1"],
@@ -1098,21 +1099,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/apollo-server-errors-virtual-7b5c82f833/0/cache/apollo-server-errors-npm-2.4.2-dc7896d913-638fc54b24.zip/node_modules/apollo-server-errors/",
           "packageDependencies": [
             ["apollo-server-errors", "virtual:2be96bca9965f9e693ff702a628027df230e9cdb882240fad98c147cb641c34b549c392b038b7d55614d1a03ec64190ae9aee91958bc1def3ebbaceac9115251#npm:2.4.2"],
-            ["graphql", null]
-          ],
-          "packagePeers": [
-            "graphql"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:2.4.2", {
-          "packageLocation": "./.yarn/$$virtual/apollo-server-errors-virtual-33e6099308/0/cache/apollo-server-errors-npm-2.4.2-dc7896d913-638fc54b24.zip/node_modules/apollo-server-errors/",
-          "packageDependencies": [
-            ["apollo-server-errors", "virtual:d12aa4715b5bffd642c2f08c1d95dd184283b54867d1c47080e40e745793a9c34422c194090479b5510ba873d8474aaf4148bdc1f4f44ab6447412adead54d9f#npm:2.4.2"],
             ["graphql", "npm:15.3.0"]
-          ],
-          "packagePeers": [
-            "graphql"
           ],
           "linkType": "HARD",
         }]
