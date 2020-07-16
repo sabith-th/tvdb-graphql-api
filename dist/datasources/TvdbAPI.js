@@ -47,7 +47,7 @@ class TvdbAPI extends _apolloDatasourceRest.RESTDataSource {
   }
 
   async getImages(id, keyType, subKey, resolution) {
-    const params = Object.assign({}, keyType && { keyType: keyType.toLowerCase() }, subKey && { subKey }, resolution && { resolution });
+    const params = _extends({}, keyType && { keyType: keyType.toLowerCase() }, subKey && { subKey }, resolution && { resolution });
     return this.get(`series/${id}/images/query`, _extends({}, params));
   }
 
@@ -61,7 +61,7 @@ class TvdbAPI extends _apolloDatasourceRest.RESTDataSource {
     imdbId,
     page
   }) {
-    const params = Object.assign({}, absoluteNumber && { absoluteNumber }, airedSeason && { airedSeason }, airedEpisode && { airedEpisode }, dvdSeason && { dvdSeason }, dvdEpisode && { dvdEpisode }, imdbId && { imdbId }, page && { page });
+    const params = _extends({}, absoluteNumber && { absoluteNumber }, airedSeason && { airedSeason }, airedEpisode && { airedEpisode }, dvdSeason && { dvdSeason }, dvdEpisode && { dvdEpisode }, imdbId && { imdbId }, page && { page });
     let query;
     const keys = Object.keys(params);
     if (keys.length === 0 || keys[0] === 'page' && keys.length === 1) {

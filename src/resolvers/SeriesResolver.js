@@ -6,7 +6,7 @@ const getNextEpisode = async (id, latestSeason, dataSources) => {
     }
     return 1;
   });
-  const nextEpisodes = latestEpisodes.data.filter(episode => {
+  const nextEpisodes = latestEpisodes.data.filter((episode) => {
     const airDate = new Date(episode.firstAired).setHours(0, 0, 0, 0);
     const today = new Date().setHours(0, 0, 0, 0);
     return airDate >= today;
@@ -20,7 +20,7 @@ const seriesResolver = {
       const response = await dataSources.tvdbAPI.getSeries(id);
       return response.data;
     },
-    seriesInfo: async (_, { id }) => ({ id })
+    seriesInfo: async (_, { id }) => ({ id }),
   },
   SeriesResponse: {
     series: async (parent, _, { dataSources }) => {
@@ -38,7 +38,7 @@ const seriesResolver = {
       const response = await dataSources.tvdbAPI.getSummary(id);
       return {
         ...response.data,
-        id
+        id,
       };
     },
     images: async (parent, { keyType, subKey, resolution }, { dataSources }) => {
@@ -60,10 +60,10 @@ const seriesResolver = {
         dvdSeason,
         dvdEpisode,
         imdbId,
-        page
+        page,
       });
       return response.data;
-    }
+    },
   },
   EpisodesSummary: {
     nextEpisode: async (parent, _, { dataSources }) => {
@@ -71,8 +71,8 @@ const seriesResolver = {
       const latestSeason = Math.max(...airedSeasons);
       const nextEpisode = await getNextEpisode(id, latestSeason, dataSources);
       return nextEpisode;
-    }
-  }
+    },
+  },
 };
 
 export default seriesResolver;

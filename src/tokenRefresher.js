@@ -11,7 +11,7 @@ export const setNewToken = async () => {
     const response = await axios.post(tvdbAPI, {
       apikey: apiKey,
       userkey: userKey,
-      username: userName
+      username: userName,
     });
     if (response.status === 200) {
       process.env.TOKEN = response.data.token;

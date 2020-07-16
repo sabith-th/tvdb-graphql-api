@@ -17,11 +17,11 @@ const EpisodeResolver = {
         dvdSeason,
         dvdEpisode,
         imdbId,
-        page
+        page,
       });
       return response.data;
-    }
-  }
+    },
+  },
 };
 
 export default EpisodeResolver;
