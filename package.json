@@ -15,7 +15,7 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "node-cron": "^2.0.3"
   },
   "devDependencies": {
