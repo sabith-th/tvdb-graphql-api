@@ -10,7 +10,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "apollo-datasource-rest": "^0.9.3",
+    "apollo-datasource-rest": "^3.7.0",
     "apollo-server": "^2.25.3",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
