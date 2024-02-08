@@ -225,15 +225,15 @@ type SeriesImagesQueryParams {
 }
 
 type SeriesSearchResult {
-  aliases: [String]!
-  banner: String!
-  firstAired: String!
-  id: Int!
-  network: String!
+  aliases: [String]
+  image_url: String
+  first_air_time: String
+  id: String!
+  network: String
   overview: String
-  seriesName: String!
-  slug: String!
-  status: String!
+  name: String!
+  slug: String
+  status: String
 }
 
 type SeriesSearchResults {

@@ -1,13 +1,15 @@
-import { RESTDataSource } from 'apollo-datasource-rest';
+import { RESTDataSource } from '@apollo/datasource-rest';
 
 class TvdbAPI extends RESTDataSource {
-  constructor() {
-    super();
-    this.baseURL = 'https://api.thetvdb.com/';
+  baseURL = 'https://api4.thetvdb.com/v4/';
+
+  constructor(options) {
+    super(options);
+    this.token = options.token;
   }
 
-  willSendRequest(request) {
-    request.headers.set('Authorization', `Bearer ${this.context.token}`);
+  willSendRequest(_path, request) {
+    request.headers['Authorization'] = `Bearer ${this.token}`;
   }
 
   async getSeries(id) {
@@ -23,7 +25,7 @@ class TvdbAPI extends RESTDataSource {
   }
 
   async searchSeries(name) {
-    return this.get('search/series', { name });
+    return this.get(`search?query=${name}&type=series`);
   }
 
   async getActors(id) {

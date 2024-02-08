@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+import gql from 'graphql-tag';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
