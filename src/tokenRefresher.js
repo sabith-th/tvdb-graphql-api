@@ -3,18 +3,14 @@ import cron from 'node-cron';
 
 export const setNewToken = async () => {
   console.log('Setting new token');
-  const tvdbAPI = 'https://api.thetvdb.com/login';
+  const tvdbAPI = 'https://api4.thetvdb.com/v4/login';
   const apiKey = process.env.API_KEY;
-  const userKey = process.env.USER_KEY;
-  const userName = process.env.USERNAME;
   try {
     const response = await axios.post(tvdbAPI, {
       apikey: apiKey,
-      userkey: userKey,
-      username: userName,
     });
     if (response.status === 200) {
-      process.env.TOKEN = response.data.token;
+      process.env.TOKEN = response.data.data.token;
       console.log('New token set');
     } else {
       console.log(`Token fetching failed with status ${response.status} body : ${response.data}`);
