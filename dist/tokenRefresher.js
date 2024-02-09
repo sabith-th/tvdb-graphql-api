@@ -1,34 +1,22 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setNewToken = undefined;
-
-var _axios = require('axios');
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _nodeCron = require('node-cron');
-
-var _nodeCron2 = _interopRequireDefault(_nodeCron);
-
+exports.setNewToken = exports.default = void 0;
+var _axios = _interopRequireDefault(require("axios"));
+var _nodeCron = _interopRequireDefault(require("node-cron"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const setNewToken = exports.setNewToken = async () => {
+const setNewToken = async () => {
   console.log('Setting new token');
-  const tvdbAPI = 'https://api.thetvdb.com/login';
+  const tvdbAPI = 'https://api4.thetvdb.com/v4/login';
   const apiKey = process.env.API_KEY;
-  const userKey = process.env.USER_KEY;
-  const userName = process.env.USERNAME;
   try {
-    const response = await _axios2.default.post(tvdbAPI, {
-      apikey: apiKey,
-      userkey: userKey,
-      username: userName
+    const response = await _axios.default.post(tvdbAPI, {
+      apikey: apiKey
     });
     if (response.status === 200) {
-      process.env.TOKEN = response.data.token;
+      process.env.TOKEN = response.data.data.token;
       console.log('New token set');
     } else {
       console.log(`Token fetching failed with status ${response.status} body : ${response.data}`);
@@ -37,10 +25,9 @@ const setNewToken = exports.setNewToken = async () => {
     console.log('Error getting new token', e);
   }
 };
-
-const task = _nodeCron2.default.schedule('0 0 * * *', async () => {
+exports.setNewToken = setNewToken;
+const task = _nodeCron.default.schedule('0 0 * * *', async () => {
   console.info('Getting new token');
   setNewToken();
 });
-
-exports.default = task;
+var _default = exports.default = task;

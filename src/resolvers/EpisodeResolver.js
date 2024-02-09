@@ -6,20 +6,18 @@ const EpisodeResolver = {
     },
     seriesEpisodes: async (
       _,
-      { id, absoluteNumber, airedSeason, airedEpisode, dvdSeason, dvdEpisode, imdbId, page },
-      { dataSources }
+      { id, season, episodeNumber, airDate, seasonType, page },
+      { dataSources },
     ) => {
       const response = await dataSources.tvdbAPI.getEpisodes({
         id,
-        absoluteNumber,
-        airedSeason,
-        airedEpisode,
-        dvdSeason,
-        dvdEpisode,
-        imdbId,
+        season,
+        episodeNumber,
+        airDate,
+        seasonType,
         page,
       });
-      return response.data;
+      return response.data.episodes;
     },
   },
 };

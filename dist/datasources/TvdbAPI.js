@@ -1,76 +1,75 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _apolloDatasourceRest = require('apollo-datasource-rest');
-
-class TvdbAPI extends _apolloDatasourceRest.RESTDataSource {
-  constructor() {
-    super();
-    this.baseURL = 'https://api.thetvdb.com/';
+exports.default = void 0;
+var _datasourceRest = require("@apollo/datasource-rest");
+class TvdbAPI extends _datasourceRest.RESTDataSource {
+  constructor(options) {
+    super(options);
+    this.token = options.token;
+    this.baseURL = 'https://api4.thetvdb.com/v4/';
   }
-
-  willSendRequest(request) {
-    request.headers.set('Authorization', `Bearer ${this.context.token}`);
+  willSendRequest(_path, request) {
+    request.headers.Authorization = `Bearer ${this.token}`;
   }
-
   async getSeries(id) {
-    return this.get(`series/${id}`);
+    return this.get(`series/${id}/extended`);
   }
-
-  async login(apikey, userkey, username) {
-    return this.post('login', { apikey, userkey, username });
+  async login(apikey) {
+    return this.post('login', {
+      body: {
+        apikey
+      }
+    });
   }
-
-  async refreshToken() {
-    return this.get('refresh_token');
-  }
-
   async searchSeries(name) {
-    return this.get('search/series', { name });
+    return this.get(`search?query=${name}&type=series`);
   }
-
   async getActors(id) {
     return this.get(`series/${id}/actors`);
   }
-
   async getSummary(id) {
     return this.get(`series/${id}/episodes/summary`);
   }
-
   async getEpisode(id) {
-    return this.get(`episodes/${id}`);
+    return this.get(`episodes/${id}/extended`);
   }
-
-  async getImages(id, keyType, subKey, resolution) {
-    const params = _extends({}, keyType && { keyType: keyType.toLowerCase() }, subKey && { subKey }, resolution && { resolution });
-    return this.get(`series/${id}/images/query`, _extends({}, params));
+  async getImages(id, lang, type) {
+    const params = new URLSearchParams();
+    if (lang) {
+      params.append('lang', lang);
+    }
+    if (type) {
+      params.append('type', type);
+    }
+    const urlPathWithQuery = `series/${id}/artworks?${params.toString()}`;
+    return this.get(urlPathWithQuery);
   }
-
   async getEpisodes({
     id,
-    absoluteNumber,
-    airedSeason,
-    airedEpisode,
-    dvdSeason,
-    dvdEpisode,
-    imdbId,
-    page
+    season,
+    episodeNumber,
+    airDate,
+    seasonType = 'default',
+    page = 0
   }) {
-    const params = _extends({}, absoluteNumber && { absoluteNumber }, airedSeason && { airedSeason }, airedEpisode && { airedEpisode }, dvdSeason && { dvdSeason }, dvdEpisode && { dvdEpisode }, imdbId && { imdbId }, page && { page });
-    let query;
-    const keys = Object.keys(params);
-    if (keys.length === 0 || keys[0] === 'page' && keys.length === 1) {
-      query = `series/${id}/episodes`;
-    } else {
-      query = `series/${id}/episodes/query`;
+    const params = new URLSearchParams();
+    if (season) {
+      params.append('season', season);
     }
-    return this.get(query, _extends({}, params));
+    if (episodeNumber) {
+      params.append('episodeNumber', episodeNumber);
+    }
+    if (airDate) {
+      params.append('airDate', airDate);
+    }
+    const query = `series/${id}/episodes/${seasonType}?page=${page}&${params.toString()}`;
+    return this.get(query);
+  }
+  async getSeriesNextAired(id) {
+    return this.get(`series/${id}/nextAired`);
   }
 }
-
-exports.default = TvdbAPI;
+var _default = exports.default = TvdbAPI;

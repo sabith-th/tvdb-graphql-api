@@ -1,8 +1,8 @@
 const ImageResolver = {
   Query: {
-    seriesImages: async (_, { seriesId, keyType, subKey, resolution }, { dataSources }) => {
-      const response = await dataSources.tvdbAPI.getImages(seriesId, keyType, subKey, resolution);
-      return response.data;
+    seriesImages: async (_, { id, lang, type }, { dataSources }) => {
+      const response = await dataSources.tvdbAPI.getImages(id, lang, type);
+      return response.data.artworks;
     },
   },
 };

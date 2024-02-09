@@ -1,21 +1,33 @@
 input Auth {
   apikey: String!
-  userkey: String!
-  username: String!
+}
+
+type Alias {
+  name: String!
+  language: String!
+}
+
+type Award {
+  id: Int
+  name: String
 }
 
 type BasicEpisode {
-  absoluteNumber: Int!
-  airedEpisodeNumber: Int!
-  airedSeason: Int!
-  dvdEpisodeNumber: Int!
-  dvdSeason: Int!
-  episodeName: String!
-  firstAired: String!
+  aired: String
+  airsAfterSeason: Int
+  airsBeforeEpisode: Int
+  airsBeforeSeason: Int
+  finaleType: String
   id: Int!
-  language: EpisodeLanguageInfo!
-  lastUpdated: Int!
-  overview: String!
+  image: String
+  imageType: Int
+  name: String!
+  number: Int
+  overview: String
+  runtime: Int
+  seasonNumber: Int
+  seasonName: String
+  year: String
 }
 
 type Conflict {
@@ -23,38 +35,48 @@ type Conflict {
   Error: String!
 }
 
+type Character {
+  id: Int!
+  image: String
+  isFeatured: Boolean
+  name: String
+  peopleId: Int
+  peopleType: String
+  personImgURL: String
+  personName: String
+}
+
+type Company {
+  id: Int!
+  name: String
+  country: String
+}
+
 type Episode {
-  absoluteNumber: Int!
-  airedEpisodeNumber: Int!
-  airedSeason: Int!
+  aired: String
   airsAfterSeason: Int
   airsBeforeEpisode: Int
   airsBeforeSeason: Int
-  director: String!
-  directors: [String]!
-  dvdChapter: Float
-  dvdDiscid: String
-  dvdEpisodeNumber: Float
-  dvdSeason: Int
-  episodeName: String!
-  filename: String!
-  firstAired: String!
-  guestStars: [String]!
+  awards: [Award]
+  characters: [Character]
+  finaleType: String
   id: Int!
-  imdbId: String!
-  lastUpdated: Int
-  lastUpdatedBy: String
-  overview: String!
-  productionCode: String
-  seriesId: String!
-  showUrl: String
-  siteRating: Float
-  siteRatingCount: Int
-  thumbAdded: String
-  thumbAuthor: Int
-  thumbHeight: String
-  thumbWidth: String
-  writers: [String]!
+  image: String
+  imageType: Int
+  isMovie: Int
+  lastUpdated: String
+  linkedMovie: Int
+  name: String!
+  nameTranslations: [String]
+  networks: [Company]
+  overview: String
+  overviewTranslations: [String]
+  runtime: Int
+  seasonNumber: Int
+  seriesId: Int
+  seasonName: String
+  studios: [Company]
+  year: String
 }
 
 type EpisodeDataQueryParams {
@@ -73,6 +95,11 @@ type EpisodeRecordData {
 
 type FilterKeys {
   data: [String]!
+}
+
+type Genre {
+  id: Int!
+  name: String
 }
 
 type JSONErrors {
@@ -112,29 +139,38 @@ type NotFound {
   Error: String!
 }
 
-type Series {
-  added: String!
-  airsDayOfWeek: String!
-  airsTime: String!
-  aliases: [String]!
-  banner: String!
-  firstAired: String!
-  genre: [String]!
+type Status {
   id: Int!
-  imdbId: String!
-  lastUpdated: Int!
-  network: String!
-  networkId: String!
-  overview: String!
-  rating: String!
-  runtime: String!
-  seriesId: String!
-  seriesName: String!
-  siteRating: Float!
-  siteRatingCount: Int!
-  slug: String!
-  status: String!
-  zap2itId: String!
+  keepUpdated: Boolean
+  name: String!
+  recordType: String
+}
+
+type Series {
+  aliases: [Alias]!
+  averageRuntime: Int
+  characters: [Character]
+  country: String
+  defaultSeasonType: Int
+  episodes: [BasicEpisode]
+  firstAired: String!
+  genres: [Genre]
+  id: Int!
+  image: String
+  isOrderRandomized: Boolean
+  lastAired: String
+  lastUpdated: String
+  name: String!
+  nameTranslations: [String]!
+  nextAired: String
+  originalCountry: String
+  originalLanguage: String
+  overview: String
+  overviewTranslations: [String]!
+  score: Float
+  slug: String
+  status: Status
+  year: String
 }
 
 type SeriesActors {
@@ -185,19 +221,24 @@ type SeriesEpisodesSummary {
   dvdSeasons: [String]!
 }
 
-type SeriesImageQueryResult {
-  fileName: String!
+type Artwork {
+  episodeId: Int
+  height: Int
   id: Int!
-  keyType: String!
-  languageId: Int!
-  ratingsInfo: RatingsInfo!
-  resolution: String!
-  subKey: String!
-  thumbnail: String!
+  image: String
+  includesText: Boolean
+  language: String
+  seasonId: Int
+  seriesId: Int
+  thumbnail: String
+  thumbnailHeight: Int
+  thumbnailWidth: Int
+  type: Int
+  width: Int
 }
 
 type SeriesImageQueryResults {
-  data: [SeriesImageQueryResult]!
+  data: [Artwork]!
   errors: JSONErrors!
 }
 
@@ -234,6 +275,7 @@ type SeriesSearchResult {
   name: String!
   slug: String
   status: String
+  tvdb_id: String!
 }
 
 type SeriesSearchResults {
@@ -320,24 +362,7 @@ type EpisodesSummary {
 
 type SeriesResponse {
   series: Series!
-  actors: [SeriesActorsData]!
-  episodesSummary: EpisodesSummary
-  images(
-    keyType: KeyType
-    "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"
-    subKey: String
-    "Resolution to filter by (1280x1024, for example)"
-    resolution: String
-  ): [SeriesImageQueryResult]
-  episodes(
-    absoluteNumber: String
-    airedSeason: String
-    airedEpisode: String
-    dvdSeason: String
-    dvdEpisode: String
-    imdbId: String
-    page: String
-  ): [Episode]!
+  nextEpisode: Episode
 }
 
 enum KeyType {
@@ -348,29 +373,27 @@ enum KeyType {
 }
 
 type Query {
-  refreshToken: Token
   series(id: Int!): Series
   searchSeries(name: String!): [SeriesSearchResult]!
   seriesInfo(id: Int!): SeriesResponse
   episode(id: Int!): Episode
   seriesImages(
-    seriesId: Int!
-    keyType: KeyType
-    "Subkey for the above query keys. For example graphical, text or if keyType is season then season number"
-    subKey: String
-    "Resolution to filter by (1280x1024, for example)"
-    resolution: String
-  ): [SeriesImageQueryResult]
+    id: Int!
+    "Language e.g. eng, spa "
+    lang: String
+    "1 - Graphical Banner, 2 - Graphical Poster, 3 - Original Poster"
+    type: Int
+  ): [Artwork]
   seriesEpisodes(
     id: Int!
-    absoluteNumber: String
-    airedSeason: String
-    airedEpisode: String
-    dvdSeason: String
-    dvdEpisode: String
-    imdbId: String
-    page: String
-  ): [Episode]!
+    season: Int
+    episodeNumber: Int
+    "airDate of the episode, format is yyyy-mm-dd"
+    airDate: String
+    "season-type: default, official, dvd, absolute. alternate or regional"
+    seasonType: String
+    page: Int
+  ): [BasicEpisode]!
 }
 
 type Mutation {
