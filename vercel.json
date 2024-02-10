@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "api",
   "rewrites": [
     {
       "source": "/(.*)",
