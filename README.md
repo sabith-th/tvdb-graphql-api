@@ -6,22 +6,22 @@ A currently deployed version can be found in [https://tvdb-graphql-api.sabith-th
 
 ## Installation
 
-Install dependencies using yarn or npm:
+Install dependencies using pnpm:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Run a local development server:
 
 ```bash
-yarn dev
+pnpm run dev
 ```
 
 Build the project:
 
 ```bash
-yarn build
+pnpm run build
 ```
 
 Run production version:
