@@ -1,10 +1,16 @@
 {
   "buildCommand": "pnpm run build",
-  "outputDirectory": "api",
-  "rewrites": [
+  "outputDirectory": "dist",
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "index.js"
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "dist/index.js"
     }
   ]
 }
