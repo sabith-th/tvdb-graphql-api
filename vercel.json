@@ -1,13 +1,14 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "includeFiles": "api/**/*.graphql"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "api/index.js"
     }
   ]
 }
