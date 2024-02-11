@@ -1,6 +1,6 @@
-module.exports = {
+export default {
   service: {
-    localSchemaFile: './src/schemas/tvdb.graphql',
+    localSchemaFile: './api/schemas/tvdb.graphql',
     name: 'tvdb-graphql-api',
   },
 };

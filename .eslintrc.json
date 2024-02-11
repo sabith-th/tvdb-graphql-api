@@ -4,6 +4,7 @@
   "rules": {
     "prettier/prettier": ["error"],
     "jsx-a11y/href-no-hash": [0],
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": "ignorePackages"
   }
 }

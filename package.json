@@ -1,14 +1,15 @@
 {
   "name": "tvdb-graphql-api",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "api/index.js",
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "lint": "eslint --fix src/**",
-    "dev": "nodemon -e .js,.graphql --exec babel-node src/index.js",
-    "build": "babel src -d dist --copy-files",
-    "start": "node dist/index.js"
+    "lint": "eslint --fix api/**",
+    "dev": "nodemon -e .js,.graphql --exec babel-node api/index.js",
+    "build": "babel api -d dist --copy-files",
+    "start": "node api/index.js"
   },
   "dependencies": {
     "@apollo/datasource-rest": "^6.2.2",
