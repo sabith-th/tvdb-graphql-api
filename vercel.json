@@ -1,12 +1,14 @@
 {
-  "version": 2,
-  "builds": [{ "src": "dist/index.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/.*", "dest": "dist/index.js" }],
-  "env": {
-    "ENGINE_API_KEY": "@engine-api-key",
-    "API_KEY": "@api-key",
-    "USER_KEY": "@user-key",
-    "USERNAME": "@username"
-  },
-  "alias": ["tvdb-graphql-api.sabith-th.now.sh"]
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "dist/index.js"
+    }
+  ]
 }
