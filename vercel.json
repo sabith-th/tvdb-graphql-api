@@ -1,7 +1,12 @@
 {
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "api/**/*.graphql"
+    }
+  },
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "destination": "/api"
     }
   ]
