@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
+  "packageManager": "pnpm@8.15.1",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint --fix src/**",
