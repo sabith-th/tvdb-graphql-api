@@ -6,7 +6,7 @@
   "packageManager": "pnpm@8.15.1",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepush": "pnpm run lint",
+    "precommit": "pnpm run lint",
     "lint": "eslint --fix src/**",
     "dev": "nodemon -e .js,.graphql --exec babel-node src/index.js",
     "build": "babel src -d dist --copy-files",
