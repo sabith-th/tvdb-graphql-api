@@ -9,7 +9,7 @@
     "lint": "eslint --fix api/**",
     "dev": "nodemon -e .js,.graphql --exec babel-node api/index.js",
     "build": "babel api -d dist --copy-files",
-    "start": "node api/index.js"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@apollo/datasource-rest": "^6.2.2",
