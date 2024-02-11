@@ -1,12 +1,12 @@
 # TVDB GraphQL API
 
-A GraphQL API built on top of the [TVDB](https://api.thetvdb.com/swagger#/) rest api.
+## WARNING: The TVDB v3 API has been deprecated and this version is no longer maintained. Checkout the main branch for the GraphQL API built on top of the new TVDB v4 API.
 
-A currently deployed version can be found in [https://tvdb-graphql-api.sabith-th.now.sh](https://tvdb-graphql-api.sabith-th.now.sh)
+A GraphQL API built on top of the [TVDB](https://api.thetvdb.com/swagger#/) rest api.
 
 ## Installation
 
-Install dependencies using yarn or npm:
+Install dependencies using yarn:
 
 ```bash
 yarn install
