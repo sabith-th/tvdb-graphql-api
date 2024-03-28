@@ -4,75 +4,77 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@apollo/datasource-rest':
-    specifier: ^6.2.2
-    version: 6.2.2(graphql@16.8.1)
-  '@apollo/server':
-    specifier: ^4.10.2
-    version: 4.10.2(graphql@16.8.1)
-  axios:
-    specifier: ^1.6.8
-    version: 1.6.8
-  dotenv:
-    specifier: ^16.4.5
-    version: 16.4.5
-  graphql:
-    specifier: ^16.8.1
-    version: 16.8.1
-  graphql-tag:
-    specifier: ^2.12.6
-    version: 2.12.6(graphql@16.8.1)
-  node-cron:
-    specifier: ^3.0.3
-    version: 3.0.3
+importers:
 
-devDependencies:
-  '@babel/cli':
-    specifier: ^7.24.1
-    version: 7.24.1(@babel/core@7.24.0)
-  '@babel/core':
-    specifier: ^7.24.0
-    version: 7.24.0
-  '@babel/eslint-parser':
-    specifier: ^7.23.10
-    version: 7.23.10(@babel/core@7.24.0)(eslint@8.57.0)
-  '@babel/node':
-    specifier: ^7.23.9
-    version: 7.23.9(@babel/core@7.24.0)
-  '@babel/preset-env':
-    specifier: ^7.24.3
-    version: 7.24.3(@babel/core@7.24.0)
-  eslint:
-    specifier: 8.57.0
-    version: 8.57.0
-  eslint-config-airbnb:
-    specifier: ^19.0.4
-    version: 19.0.4(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.57.0)
-  eslint-config-prettier:
-    specifier: ^9.1.0
-    version: 9.1.0(eslint@8.57.0)
-  eslint-plugin-flowtype:
-    specifier: 8.0.3
-    version: 8.0.3(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.57.0)
-  eslint-plugin-import:
-    specifier: ^2.29.1
-    version: 2.29.1(eslint@8.57.0)
-  eslint-plugin-jsx-a11y:
-    specifier: ^6.8.0
-    version: 6.8.0(eslint@8.57.0)
-  eslint-plugin-prettier:
-    specifier: ^5.1.3
-    version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
-  husky:
-    specifier: ^9.0.11
-    version: 9.0.11
-  nodemon:
-    specifier: ^3.1.0
-    version: 3.1.0
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
+  .:
+    dependencies:
+      '@apollo/datasource-rest':
+        specifier: ^6.2.2
+        version: 6.2.2(graphql@16.8.1)
+      '@apollo/server':
+        specifier: ^4.10.2
+        version: 4.10.2(graphql@16.8.1)
+      axios:
+        specifier: ^1.6.8
+        version: 1.6.8
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
+      graphql:
+        specifier: ^16.8.1
+        version: 16.8.1
+      graphql-tag:
+        specifier: ^2.12.6
+        version: 2.12.6(graphql@16.8.1)
+      node-cron:
+        specifier: ^3.0.3
+        version: 3.0.3
+    devDependencies:
+      '@babel/cli':
+        specifier: ^7.24.1
+        version: 7.24.1(@babel/core@7.24.0)
+      '@babel/core':
+        specifier: ^7.24.0
+        version: 7.24.0
+      '@babel/eslint-parser':
+        specifier: ^7.23.10
+        version: 7.23.10(@babel/core@7.24.0)(eslint@8.57.0)
+      '@babel/node':
+        specifier: ^7.23.9
+        version: 7.23.9(@babel/core@7.24.0)
+      '@babel/preset-env':
+        specifier: ^7.24.3
+        version: 7.24.3(@babel/core@7.24.0)
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      eslint-config-airbnb:
+        specifier: ^19.0.4
+        version: 19.0.4(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.57.0)
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@8.57.0)
+      eslint-plugin-flowtype:
+        specifier: 8.0.3
+        version: 8.0.3(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.57.0)
+      eslint-plugin-import:
+        specifier: ^2.29.1
+        version: 2.29.1(eslint@8.57.0)
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.8.0
+        version: 6.8.0(eslint@8.57.0)
+      eslint-plugin-prettier:
+        specifier: ^5.1.3
+        version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
+      husky:
+        specifier: ^9.0.11
+        version: 9.0.11
+      nodemon:
+        specifier: ^3.1.0
+        version: 3.1.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
 
 packages:
 
@@ -171,7 +173,7 @@ packages:
       '@types/node-fetch': 2.6.11
       async-retry: 1.3.3
       cors: 2.8.5
-      express: 4.18.2
+      express: 4.19.2
       graphql: 16.8.1
       loglevel: 1.9.1
       lru-cache: 7.18.3
@@ -1296,7 +1298,7 @@ packages:
     dependencies:
       '@babel/core': 7.24.0
       '@babel/helper-annotate-as-pure': 7.22.5
-      '@babel/helper-module-imports': 7.22.15
+      '@babel/helper-module-imports': 7.24.3
       '@babel/helper-plugin-utils': 7.24.0
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.24.0)
       '@babel/types': 7.24.0
@@ -2159,8 +2161,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /body-parser@1.20.1:
-    resolution: {integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==}
+  /body-parser@1.20.2:
+    resolution: {integrity: sha512-ml9pReCu3M61kGlqoTm2umSXTlRTuGTx0bfYj+uIUKKYycG5NtSbeetV3faSU6R7ajOPw0g/J1PvK4qNy7s5bA==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
     dependencies:
       bytes: 3.1.2
@@ -2172,7 +2174,7 @@ packages:
       iconv-lite: 0.4.24
       on-finished: 2.4.1
       qs: 6.11.0
-      raw-body: 2.5.1
+      raw-body: 2.5.2
       type-is: 1.6.18
       unpipe: 1.0.0
     transitivePeerDependencies:
@@ -2353,8 +2355,8 @@ packages:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
     dev: false
 
-  /cookie@0.5.0:
-    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+  /cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
     dev: false
 
@@ -2955,16 +2957,16 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /express@4.18.2:
-    resolution: {integrity: sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==}
+  /express@4.19.2:
+    resolution: {integrity: sha512-5T6nhjsT+EOMzuck8JjBHARTHfMht0POzlA60WV2pMD3gyXw2LZnZ+ueGdNxG+0calOJcWKbpFcuzLZ91YWq9Q==}
     engines: {node: '>= 0.10.0'}
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
-      body-parser: 1.20.1
+      body-parser: 1.20.2
       content-disposition: 0.5.4
       content-type: 1.0.5
-      cookie: 0.5.0
+      cookie: 0.6.0
       cookie-signature: 1.0.6
       debug: 2.6.9
       depd: 2.0.0
@@ -4129,8 +4131,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /raw-body@2.5.1:
-    resolution: {integrity: sha512-qqJBtEyVgS0ZmPGdCFPWJ3FreoqvG4MVQln/kCgF7Olq95IbOp0/BWyMwbdtn4VTvkM8Y7khCQ2Xgk/tcrCXig==}
+  /raw-body@2.5.2:
+    resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
     dependencies:
       bytes: 3.1.2
