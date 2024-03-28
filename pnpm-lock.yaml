@@ -9,8 +9,8 @@ dependencies:
     specifier: ^6.2.2
     version: 6.2.2(graphql@16.8.1)
   '@apollo/server':
-    specifier: ^4.10.1
-    version: 4.10.1(graphql@16.8.1)
+    specifier: ^4.10.2
+    version: 4.10.2(graphql@16.8.1)
   axios:
     specifier: ^1.6.8
     version: 1.6.8
@@ -148,8 +148,8 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@apollo/server@4.10.1(graphql@16.8.1):
-    resolution: {integrity: sha512-XGMOgTyzV4EBHQq0xQVKFry9hZF7AA/6nxxGLamqdxodhdSdGbU9jrlb5/XDveeGuXP3+5JDdrB2HcziVLJcMA==}
+  /@apollo/server@4.10.2(graphql@16.8.1):
+    resolution: {integrity: sha512-qlTZE4XyzMPprtkxFjmPxMwc2KC4nvNQrKXk2PMotEACKcaLXVZFIgstxbSqBCNl2KgzbsgU1g6vvbV6Xcfikw==}
     engines: {node: '>=14.16.0'}
     peerDependencies:
       graphql: ^16.6.0
