@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.10.4
     version: 4.10.4(graphql@16.8.1)
   axios:
-    specifier: ^1.6.8
-    version: 1.6.8
+    specifier: ^1.7.2
+    version: 1.7.2
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
@@ -541,11 +541,6 @@ packages:
       '@babel/types': 7.24.5
     dev: true
 
-  /@babel/helper-plugin-utils@7.24.0:
-    resolution: {integrity: sha512-9cUznXMG0+FxRuJfvL82QlTqIzhVW9sL0KjMPHhAOOvpQGL8QtdxnBKILjBqxlHyliz0yCa1G903ZXI/FuHy2w==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/helper-plugin-utils@7.24.5:
     resolution: {integrity: sha512-xjNLDopRzW2o6ba0gKbkZq5YWEBaK3PCyTOY1K2P/O07LGMhMqlMXPxwN4S5/RhWuCobT8z0jrlKGlYmeR1OhQ==}
     engines: {node: '>=6.9.0'}
@@ -776,7 +771,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.24.5
-      '@babel/helper-plugin-utils': 7.24.0
+      '@babel/helper-plugin-utils': 7.24.5
     dev: true
 
   /@babel/plugin-syntax-import-assertions@7.24.1(@babel/core@7.24.5):
@@ -824,7 +819,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.24.5
-      '@babel/helper-plugin-utils': 7.24.0
+      '@babel/helper-plugin-utils': 7.24.5
     dev: true
 
   /@babel/plugin-syntax-logical-assignment-operators@7.10.4(@babel/core@7.24.5):
@@ -1337,7 +1332,7 @@ packages:
       '@babel/core': 7.24.5
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-module-imports': 7.24.3
-      '@babel/helper-plugin-utils': 7.24.0
+      '@babel/helper-plugin-utils': 7.24.5
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.24.5)
       '@babel/types': 7.24.5
     dev: true
@@ -2131,8 +2126,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
+  /axios@1.7.2:
+    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
