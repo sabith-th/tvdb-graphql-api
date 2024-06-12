@@ -29,8 +29,8 @@ dependencies:
 
 devDependencies:
   '@babel/cli':
-    specifier: ^7.24.5
-    version: 7.24.5(@babel/core@7.24.7)
+    specifier: ^7.24.7
+    version: 7.24.7(@babel/core@7.24.7)
   '@babel/core':
     specifier: ^7.24.7
     version: 7.24.7
@@ -311,8 +311,8 @@ packages:
     engines: {node: '>=16'}
     dev: false
 
-  /@babel/cli@7.24.5(@babel/core@7.24.7):
-    resolution: {integrity: sha512-2qg1mYtJRsOOWF6IUwLP5jI42P8Cc0hQ5TmnjLrik/4DKouO8dFJN80HEz81VmVeUs97yuuf3vQ/9j7Elrcjlg==}
+  /@babel/cli@7.24.7(@babel/core@7.24.7):
+    resolution: {integrity: sha512-8dfPprJgV4O14WTx+AQyEA+opgUKPrsIXX/MdL50J1n06EQJ6m1T+CdsJe0qEC0B/Xl85i+Un5KVAxd/PACX9A==}
     engines: {node: '>=6.9.0'}
     hasBin: true
     peerDependencies:
@@ -320,7 +320,7 @@ packages:
     dependencies:
       '@babel/core': 7.24.7
       '@jridgewell/trace-mapping': 0.3.25
-      commander: 4.1.1
+      commander: 6.2.1
       convert-source-map: 2.0.0
       fs-readdir-recursive: 1.1.0
       glob: 7.2.3
@@ -2380,11 +2380,6 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
-  /commander@4.1.1:
-    resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
-    engines: {node: '>= 6'}
-    dev: true
-
   /commander@6.2.1:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
@@ -3251,6 +3246,7 @@ packages:
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -3402,6 +3398,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
