@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^7.24.7
     version: 7.24.7
   '@babel/eslint-parser':
-    specifier: ^7.24.5
-    version: 7.24.5(@babel/core@7.24.7)(eslint@8.57.0)
+    specifier: ^7.24.7
+    version: 7.24.7(@babel/core@7.24.7)(eslint@8.57.0)
   '@babel/node':
     specifier: ^7.24.7
     version: 7.24.7(@babel/core@7.24.7)
@@ -367,8 +367,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser@7.24.5(@babel/core@7.24.7)(eslint@8.57.0):
-    resolution: {integrity: sha512-gsUcqS/fPlgAw1kOtpss7uhY6E9SFFANQ6EFX5GTvzUwaV0+sGaZWk6xq22MOdeT9wfxyokW3ceCUvOiRtZciQ==}
+  /@babel/eslint-parser@7.24.7(@babel/core@7.24.7)(eslint@8.57.0):
+    resolution: {integrity: sha512-SO5E3bVxDuxyNxM5agFv480YA2HO6ohZbGxbazZdIk3KQOPOGVNw6q78I9/lbviIf95eq6tPozeYnJLbjnC8IA==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
