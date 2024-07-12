@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@apollo/datasource-rest':
-    specifier: ^6.2.2
-    version: 6.2.2(graphql@16.9.0)
+    specifier: ^6.3.0
+    version: 6.3.0(graphql@16.9.0)
   '@apollo/server':
     specifier: ^4.10.4
     version: 4.10.4(graphql@16.9.0)
@@ -97,8 +97,8 @@ packages:
       graphql: 16.9.0
     dev: false
 
-  /@apollo/datasource-rest@6.2.2(graphql@16.9.0):
-    resolution: {integrity: sha512-0rxlyAdlZ5n4zoPsME5TCzxZiyu/4m5dawatclr2ckwAewnGARcqdhFnckrhlOIgLQTtcl9lCmUit4DGoK47lw==}
+  /@apollo/datasource-rest@6.3.0(graphql@16.9.0):
+    resolution: {integrity: sha512-5YpAXY2VvkYySmaDl8G8Yt8qjOO89cqx7r+uchFjKGacS72L8nKxrLIzltjhQkLpyjwMLFLi2UDSCSMht+qGQA==}
     engines: {node: '>=16.14'}
     peerDependencies:
       graphql: ^16.5.0
