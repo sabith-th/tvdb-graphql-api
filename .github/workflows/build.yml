@@ -1,0 +1,18 @@
+name: Build for Dependabot
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    environment: Preview
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+      - name: Install Project Dependencies
+        run: pnpm install
+      - name: Build Project
+        run: pnpm run build
