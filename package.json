@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@apollo/datasource-rest": "^6.3.0",
-    "@apollo/server": "^4.10.4",
+    "@apollo/server": "^4.10.5",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "graphql": "^16.9.0",
