@@ -65,8 +65,8 @@ devDependencies:
     specifier: ^5.2.1
     version: 5.2.1(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.3)
   husky:
-    specifier: ^9.1.4
-    version: 9.1.4
+    specifier: ^9.1.5
+    version: 9.1.5
   nodemon:
     specifier: ^3.1.4
     version: 3.1.4
@@ -3451,8 +3451,8 @@ packages:
       toidentifier: 1.0.1
     dev: false
 
-  /husky@9.1.4:
-    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
+  /husky@9.1.5:
+    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
