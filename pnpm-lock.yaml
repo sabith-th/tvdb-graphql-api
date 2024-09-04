@@ -29,8 +29,8 @@ dependencies:
 
 devDependencies:
   '@babel/cli':
-    specifier: ^7.24.8
-    version: 7.24.8(@babel/core@7.25.2)
+    specifier: ^7.25.6
+    version: 7.25.6(@babel/core@7.25.2)
   '@babel/core':
     specifier: ^7.25.2
     version: 7.25.2
@@ -305,8 +305,8 @@ packages:
     engines: {node: '>=16'}
     dev: false
 
-  /@babel/cli@7.24.8(@babel/core@7.25.2):
-    resolution: {integrity: sha512-isdp+G6DpRyKc+3Gqxy2rjzgF7Zj9K0mzLNnxz+E/fgeag8qT3vVulX4gY9dGO1q0y+0lUv6V3a+uhUzMzrwXg==}
+  /@babel/cli@7.25.6(@babel/core@7.25.2):
+    resolution: {integrity: sha512-Z+Doemr4VtvSD2SNHTrkiFZ1LX+JI6tyRXAAOb4N9khIuPyoEPmTPJarPm8ljJV1D6bnMQjyHMWTT9NeKbQuXA==}
     engines: {node: '>=6.9.0'}
     hasBin: true
     peerDependencies:
@@ -1424,7 +1424,7 @@ packages:
       '@babel/helper-module-imports': 7.24.7
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
-      '@babel/types': 7.25.2
+      '@babel/types': 7.25.4
     transitivePeerDependencies:
       - supports-color
     dev: true
