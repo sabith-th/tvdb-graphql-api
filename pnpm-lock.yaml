@@ -4,77 +4,75 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
+dependencies:
+  '@apollo/datasource-rest':
+    specifier: ^6.3.0
+    version: 6.3.0(graphql@16.9.0)
+  '@apollo/server':
+    specifier: ^4.11.0
+    version: 4.11.0(graphql@16.9.0)
+  axios:
+    specifier: ^1.7.7
+    version: 1.7.7
+  dotenv:
+    specifier: ^16.4.5
+    version: 16.4.5
+  graphql:
+    specifier: ^16.9.0
+    version: 16.9.0
+  graphql-tag:
+    specifier: ^2.12.6
+    version: 2.12.6(graphql@16.9.0)
+  node-cron:
+    specifier: ^3.0.3
+    version: 3.0.3
 
-  .:
-    dependencies:
-      '@apollo/datasource-rest':
-        specifier: ^6.3.0
-        version: 6.3.0(graphql@16.9.0)
-      '@apollo/server':
-        specifier: ^4.11.0
-        version: 4.11.0(graphql@16.9.0)
-      axios:
-        specifier: ^1.7.7
-        version: 1.7.7
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      graphql:
-        specifier: ^16.9.0
-        version: 16.9.0
-      graphql-tag:
-        specifier: ^2.12.6
-        version: 2.12.6(graphql@16.9.0)
-      node-cron:
-        specifier: ^3.0.3
-        version: 3.0.3
-    devDependencies:
-      '@babel/cli':
-        specifier: ^7.25.6
-        version: 7.25.6(@babel/core@7.25.2)
-      '@babel/core':
-        specifier: ^7.25.2
-        version: 7.25.2
-      '@babel/eslint-parser':
-        specifier: ^7.25.1
-        version: 7.25.1(@babel/core@7.25.2)(eslint@8.57.0)
-      '@babel/node':
-        specifier: ^7.25.0
-        version: 7.25.0(@babel/core@7.25.2)
-      '@babel/preset-env':
-        specifier: ^7.25.4
-        version: 7.25.4(@babel/core@7.25.2)
-      eslint:
-        specifier: 8.57.0
-        version: 8.57.0
-      eslint-config-airbnb:
-        specifier: ^19.0.4
-        version: 19.0.4(eslint-plugin-import@2.30.0)(eslint-plugin-jsx-a11y@6.10.0)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.36.1)(eslint@8.57.0)
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@8.57.0)
-      eslint-plugin-flowtype:
-        specifier: 8.0.3
-        version: 8.0.3(@babel/plugin-syntax-flow@7.24.7)(@babel/plugin-transform-react-jsx@7.25.2)(eslint@8.57.0)
-      eslint-plugin-import:
-        specifier: ^2.30.0
-        version: 2.30.0(eslint@8.57.0)
-      eslint-plugin-jsx-a11y:
-        specifier: ^6.10.0
-        version: 6.10.0(eslint@8.57.0)
-      eslint-plugin-prettier:
-        specifier: ^5.2.1
-        version: 5.2.1(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.3)
-      husky:
-        specifier: ^9.1.6
-        version: 9.1.6
-      nodemon:
-        specifier: ^3.1.4
-        version: 3.1.4
-      prettier:
-        specifier: ^3.3.3
-        version: 3.3.3
+devDependencies:
+  '@babel/cli':
+    specifier: ^7.25.6
+    version: 7.25.6(@babel/core@7.25.2)
+  '@babel/core':
+    specifier: ^7.25.2
+    version: 7.25.2
+  '@babel/eslint-parser':
+    specifier: ^7.25.1
+    version: 7.25.1(@babel/core@7.25.2)(eslint@8.57.0)
+  '@babel/node':
+    specifier: ^7.25.0
+    version: 7.25.0(@babel/core@7.25.2)
+  '@babel/preset-env':
+    specifier: ^7.25.4
+    version: 7.25.4(@babel/core@7.25.2)
+  eslint:
+    specifier: 8.57.0
+    version: 8.57.0
+  eslint-config-airbnb:
+    specifier: ^19.0.4
+    version: 19.0.4(eslint-plugin-import@2.30.0)(eslint-plugin-jsx-a11y@6.10.0)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.36.1)(eslint@8.57.0)
+  eslint-config-prettier:
+    specifier: ^9.1.0
+    version: 9.1.0(eslint@8.57.0)
+  eslint-plugin-flowtype:
+    specifier: 8.0.3
+    version: 8.0.3(@babel/plugin-syntax-flow@7.24.7)(@babel/plugin-transform-react-jsx@7.25.2)(eslint@8.57.0)
+  eslint-plugin-import:
+    specifier: ^2.30.0
+    version: 2.30.0(eslint@8.57.0)
+  eslint-plugin-jsx-a11y:
+    specifier: ^6.10.0
+    version: 6.10.0(eslint@8.57.0)
+  eslint-plugin-prettier:
+    specifier: ^5.2.1
+    version: 5.2.1(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.3)
+  husky:
+    specifier: ^9.1.6
+    version: 9.1.6
+  nodemon:
+    specifier: ^3.1.7
+    version: 3.1.7
+  prettier:
+    specifier: ^3.3.3
+    version: 3.3.3
 
 packages:
 
@@ -4090,8 +4088,8 @@ packages:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
     dev: true
 
-  /nodemon@3.1.4:
-    resolution: {integrity: sha512-wjPBbFhtpJwmIeY2yP7QF+UKzPfltVGtfce1g/bB15/8vCGZj8uxD62b/b9M9/WVgme0NZudpownKN+c0plXlQ==}
+  /nodemon@3.1.7:
+    resolution: {integrity: sha512-hLj7fuMow6f0lbB0cD14Lz2xNjwsyruH251Pk4t/yIitCFJbmY1myuLlHm/q06aST4jg6EgAh74PIBBrRqpVAQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
