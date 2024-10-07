@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^7.25.7
     version: 7.25.7
   '@babel/eslint-parser':
-    specifier: ^7.25.1
-    version: 7.25.1(@babel/core@7.25.7)(eslint@8.57.1)
+    specifier: ^7.25.7
+    version: 7.25.7(@babel/core@7.25.7)(eslint@8.57.1)
   '@babel/node':
     specifier: ^7.25.7
     version: 7.25.7(@babel/core@7.25.7)
@@ -374,8 +374,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser@7.25.1(@babel/core@7.25.7)(eslint@8.57.1):
-    resolution: {integrity: sha512-Y956ghgTT4j7rKesabkh5WeqgSFZVFwaPR0IWFm7KFHFmmJ4afbG49SmfW4S+GyRPx0Dy5jxEWA5t0rpxfElWg==}
+  /@babel/eslint-parser@7.25.7(@babel/core@7.25.7)(eslint@8.57.1):
+    resolution: {integrity: sha512-B+BO9x86VYsQHimucBAL1fxTJKF4wyKY6ZVzee9QgzdZOUfs3BaR6AQrgoGrRI+7IFS1wUz/VyQ+SoBcSpdPbw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
@@ -1500,10 +1500,10 @@ packages:
     dependencies:
       '@babel/core': 7.25.7
       '@babel/helper-annotate-as-pure': 7.24.7
-      '@babel/helper-module-imports': 7.24.7
+      '@babel/helper-module-imports': 7.25.7
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.7)
-      '@babel/types': 7.25.6
+      '@babel/types': 7.25.7
     transitivePeerDependencies:
       - supports-color
     dev: true
