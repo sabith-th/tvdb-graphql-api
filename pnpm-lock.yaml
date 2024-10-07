@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^7.25.1
     version: 7.25.1(@babel/core@7.25.2)(eslint@8.57.1)
   '@babel/node':
-    specifier: ^7.25.0
-    version: 7.25.0(@babel/core@7.25.2)
+    specifier: ^7.25.7
+    version: 7.25.7(@babel/core@7.25.2)
   '@babel/preset-env':
     specifier: ^7.25.4
     version: 7.25.4(@babel/core@7.25.2)
@@ -666,15 +666,15 @@ packages:
       picocolors: 1.0.1
     dev: true
 
-  /@babel/node@7.25.0(@babel/core@7.25.2):
-    resolution: {integrity: sha512-fgdlIcf1vLeZ6gUHcl799Wbk6no5tnkGi6t1gpAb1a97ZB+KCRp8Sgb7acGTjnFhOzqzcsbJ4+wzewqb6JM0tA==}
+  /@babel/node@7.25.7(@babel/core@7.25.2):
+    resolution: {integrity: sha512-SLrRogiTuneH3mZeZQtWBECyVRtznezYdnH4UjatZjHrk/QP+GH9bqsToCWp23pPeA20NO1/p8kECzWt5TTpUA==}
     engines: {node: '>=6.9.0'}
     hasBin: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/register': 7.24.6(@babel/core@7.25.2)
+      '@babel/register': 7.25.7(@babel/core@7.25.2)
       commander: 6.2.1
       core-js: 3.37.1
       node-environment-flags: 1.0.6
@@ -1651,8 +1651,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /@babel/register@7.24.6(@babel/core@7.25.2):
-    resolution: {integrity: sha512-WSuFCc2wCqMeXkz/i3yfAAsxwWflEgbVkZzivgAmXl/MxrXeoYFZOOPllbC8R8WTF7u61wSRQtDVZ1879cdu6w==}
+  /@babel/register@7.25.7(@babel/core@7.25.2):
+    resolution: {integrity: sha512-qHTd2Rhn/rKhSUwdY6+n98FmwXN+N+zxSVx3zWqRe9INyvTpv+aQ5gDV2+43ACd3VtMBzPPljbb0gZb8u5ma6Q==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
