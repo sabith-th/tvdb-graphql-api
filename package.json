@@ -16,7 +16,7 @@
     "@apollo/datasource-rest": "^6.4.1",
     "@apollo/server": "^5.4.0",
     "axios": "^1.13.5",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.2.4",
     "graphql": "^16.12.0",
     "graphql-tag": "^2.12.6",
     "node-cron": "^4.2.1"
