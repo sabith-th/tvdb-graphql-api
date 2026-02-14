@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
