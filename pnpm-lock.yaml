@@ -7,75 +7,77 @@ settings:
 overrides:
   picomatch: ^2.3.2
 
-dependencies:
-  '@apollo/datasource-rest':
-    specifier: ^6.4.1
-    version: 6.4.1(graphql@16.13.2)
-  '@apollo/server':
-    specifier: ^5.5.0
-    version: 5.5.0(graphql@16.13.2)
-  axios:
-    specifier: ^1.14.0
-    version: 1.15.0
-  dotenv:
-    specifier: ^17.4.2
-    version: 17.4.2
-  graphql:
-    specifier: ^16.13.2
-    version: 16.13.2
-  graphql-tag:
-    specifier: ^2.12.6
-    version: 2.12.6(graphql@16.13.2)
-  node-cron:
-    specifier: ^4.2.1
-    version: 4.2.1
+importers:
 
-devDependencies:
-  '@babel/cli':
-    specifier: ^7.28.6
-    version: 7.28.6(@babel/core@7.29.0)
-  '@babel/core':
-    specifier: ^7.29.0
-    version: 7.29.0
-  '@babel/eslint-parser':
-    specifier: ^7.28.6
-    version: 7.28.6(@babel/core@7.29.0)(eslint@8.57.1)
-  '@babel/node':
-    specifier: ^7.29.0
-    version: 7.29.0(@babel/core@7.29.0)
-  '@babel/preset-env':
-    specifier: ^7.29.2
-    version: 7.29.2(@babel/core@7.29.0)
-  eslint:
-    specifier: 8.57.1
-    version: 8.57.1
-  eslint-config-airbnb:
-    specifier: ^19.0.4
-    version: 19.0.4(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.37.5)(eslint@8.57.1)
-  eslint-config-prettier:
-    specifier: ^10.1.8
-    version: 10.1.8(eslint@8.57.1)
-  eslint-plugin-flowtype:
-    specifier: 8.0.3
-    version: 8.0.3(@babel/plugin-syntax-flow@7.28.6)(@babel/plugin-transform-react-jsx@7.28.6)(eslint@8.57.1)
-  eslint-plugin-import:
-    specifier: ^2.32.0
-    version: 2.32.0(eslint@8.57.1)
-  eslint-plugin-jsx-a11y:
-    specifier: ^6.10.2
-    version: 6.10.2(eslint@8.57.1)
-  eslint-plugin-prettier:
-    specifier: ^5.5.5
-    version: 5.5.5(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.8.3)
-  husky:
-    specifier: ^9.1.7
-    version: 9.1.7
-  nodemon:
-    specifier: ^3.1.14
-    version: 3.1.14
-  prettier:
-    specifier: ^3.8.1
-    version: 3.8.3
+  .:
+    dependencies:
+      '@apollo/datasource-rest':
+        specifier: ^6.4.1
+        version: 6.4.1(graphql@16.13.2)
+      '@apollo/server':
+        specifier: ^5.5.0
+        version: 5.5.0(graphql@16.13.2)
+      '@upstash/redis':
+        specifier: ^1.37.0
+        version: 1.37.0
+      axios:
+        specifier: ^1.14.0
+        version: 1.15.0
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
+      graphql:
+        specifier: ^16.13.2
+        version: 16.13.2
+      graphql-tag:
+        specifier: ^2.12.6
+        version: 2.12.6(graphql@16.13.2)
+    devDependencies:
+      '@babel/cli':
+        specifier: ^7.28.6
+        version: 7.28.6(@babel/core@7.29.0)
+      '@babel/core':
+        specifier: ^7.29.0
+        version: 7.29.0
+      '@babel/eslint-parser':
+        specifier: ^7.28.6
+        version: 7.28.6(@babel/core@7.29.0)(eslint@8.57.1)
+      '@babel/node':
+        specifier: ^7.29.0
+        version: 7.29.0(@babel/core@7.29.0)
+      '@babel/preset-env':
+        specifier: ^7.29.2
+        version: 7.29.2(@babel/core@7.29.0)
+      eslint:
+        specifier: 8.57.1
+        version: 8.57.1
+      eslint-config-airbnb:
+        specifier: ^19.0.4
+        version: 19.0.4(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.37.5)(eslint@8.57.1)
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@8.57.1)
+      eslint-plugin-flowtype:
+        specifier: 8.0.3
+        version: 8.0.3(@babel/plugin-syntax-flow@7.28.6)(@babel/plugin-transform-react-jsx@7.28.6)(eslint@8.57.1)
+      eslint-plugin-import:
+        specifier: ^2.32.0
+        version: 2.32.0(eslint@8.57.1)
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.10.2
+        version: 6.10.2(eslint@8.57.1)
+      eslint-plugin-prettier:
+        specifier: ^5.5.5
+        version: 5.5.5(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.8.3)
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      nodemon:
+        specifier: ^3.1.14
+        version: 3.1.14
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.3
 
 packages:
 
@@ -1731,6 +1733,12 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@upstash/redis@1.37.0:
+    resolution: {integrity: sha512-LqOJ3+XWPLSZ2rGSed5DYG3ixybxb8EhZu3yQqF7MdZX1wLBG/FRcI6xcUZXHy/SS7mmXWyadrud0HJHkOc+uw==}
+    dependencies:
+      uncrypto: 0.1.3
+    dev: false
 
   /@whatwg-node/promise-helpers@1.3.2:
     resolution: {integrity: sha512-Nst5JdK47VIl9UcGwtv2Rcgyn5lWtZ0/mhRQ4G8NN2isxpq2TO30iqHzmwoJycjWuyUfg3GFXqP/gFHXeV57IA==}
@@ -3969,11 +3977,6 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /node-cron@4.2.1:
-    resolution: {integrity: sha512-lgimEHPE/QDgFlywTd8yTR61ptugX3Qer29efeyWw2rv259HtGBNn1vZVmp8lB9uo9wC0t/AT4iGqXxia+CJFg==}
-    engines: {node: '>=6.0.0'}
-    dev: false
-
   /node-environment-flags@1.0.6:
     resolution: {integrity: sha512-5Evy2epuL+6TM0lCQGpFIj6KwiEsGh1SrHUhTbNX+sLbBtjidPZFAnVK9y5yU1+h//RitLbRHTIMyxQPtxMdHw==}
     dependencies:
@@ -5053,6 +5056,10 @@ packages:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
     dev: true
+
+  /uncrypto@0.1.3:
+    resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
+    dev: false
 
   /undefsafe@2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}

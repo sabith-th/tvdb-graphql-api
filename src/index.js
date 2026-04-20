@@ -5,9 +5,7 @@ import 'dotenv/config';
 import TvdbAPI from './datasources/TvdbAPI';
 import resolvers from './resolvers/index';
 import typeDefs from './schemas/index';
-import tokenRefresher, { setNewToken } from './tokenRefresher';
-
-setNewToken();
+import { getToken } from './tokenManager';
 
 async function startApolloServer() {
   const server = new ApolloServer({
@@ -17,8 +15,8 @@ async function startApolloServer() {
     plugins: [ApolloServerPluginLandingPageLocalDefault()],
   });
   const { url } = await startStandaloneServer(server, {
-    context: ({ req }) => {
-      const token = req.headers.authorization || process.env.TOKEN || '';
+    context: async ({ req }) => {
+      const token = req.headers.authorization || (await getToken());
       const { cache } = server;
       return {
         dataSources: {
@@ -34,5 +32,3 @@ async function startApolloServer() {
 }
 
 startApolloServer();
-
-tokenRefresher.start();
