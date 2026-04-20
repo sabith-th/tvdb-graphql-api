@@ -14,7 +14,7 @@ pnpm run precommit # Lint check (runs automatically on commit)
 
 There are no tests configured in this project.
 
-Requires a `.env` file with `API_KEY` (TVDB v4 API key) for the server to start.
+Requires a `.env` file with `API_KEY` (TVDB v4 API key), `UPSTASH_REDIS_KV_REST_API_URL`, and `UPSTASH_REDIS_KV_REST_API_TOKEN` for the server to start.
 
 ## Architecture
 
@@ -28,7 +28,7 @@ This is a **GraphQL API wrapper** over The TVDB v4 REST API, built with Apollo S
 
 **Key design points:**
 - The `seriesInfo` query is a **composed resolver** — it merges series data with the next aired episode, which isn't a single REST endpoint; it requires two API calls.
-- Authentication is two-step: the `login` mutation exchanges the API key for a short-lived Bearer token. A cron job in `tokenRefresher.js` refreshes this token daily at midnight.
+- Authentication is two-step: the `login` mutation exchanges the API key for a short-lived Bearer token. `tokenManager.js` fetches the token lazily per-request and caches it in Upstash Redis with a 23h TTL, ensuring shared state across Vercel serverless instances.
 - All resolvers receive the TVDB Bearer token via GraphQL context (`context.token`), which clients pass in request headers.
 - The schema is defined in a single `.graphql` file (`src/schemas/tvdb.graphql`) and loaded by `src/schemas/index.js`.
 - Resolvers are merged in `src/resolvers/index.js` before being passed to Apollo Server.
