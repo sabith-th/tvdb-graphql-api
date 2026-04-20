@@ -8,7 +8,7 @@ const redis = new Redis({
 const TOKEN_KEY = 'tvdb_token';
 const TOKEN_TTL_SECONDS = 23 * 60 * 60; // 23h, within TVDB's 24h expiry
 
-export const getToken = async () => {
+const getToken = async () => {
   const cached = await redis.get(TOKEN_KEY);
   if (cached) return cached;
 
@@ -24,3 +24,5 @@ export const getToken = async () => {
   await redis.set(TOKEN_KEY, token, { ex: TOKEN_TTL_SECONDS });
   return token;
 };
+
+export default getToken;

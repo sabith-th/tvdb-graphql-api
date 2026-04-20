@@ -5,7 +5,7 @@ import 'dotenv/config';
 import TvdbAPI from './datasources/TvdbAPI';
 import resolvers from './resolvers/index';
 import typeDefs from './schemas/index';
-import { getToken } from './tokenManager';
+import getToken from './tokenManager';
 
 async function startApolloServer() {
   const server = new ApolloServer({
