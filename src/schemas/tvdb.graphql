@@ -10,6 +10,39 @@ type Alias {
 type Award {
   id: Int
   name: String
+  categories: [AwardCategory]
+  score: Int
+}
+
+type AwardNominee {
+  character: Character
+  details: String
+  id: Int!
+  isWinner: Boolean
+  movieId: Int
+  seriesId: Int
+  song: String
+  year: String
+}
+
+type AwardCategory {
+  allowCoNominees: Boolean
+  award: Award
+  forMovies: Boolean
+  forSeries: Boolean
+  id: Int!
+  name: String
+  nominees: [AwardNominee]
+}
+
+type Translation {
+  aliases: [String]
+  isAlias: Boolean
+  isPrimary: Boolean
+  language: String
+  name: String
+  overview: String
+  tagline: String
 }
 
 type BasicEpisode {
@@ -56,9 +89,24 @@ type Character {
 }
 
 type Company {
-  id: Int!
-  name: String
+  activeDate: String
+  aliases: [Alias]
   country: String
+  id: Int!
+  inactiveDate: String
+  name: String
+  nameTranslations: [String]
+  overviewTranslations: [String]
+  primaryCompanyType: Int
+  slug: String
+}
+
+type RemoteIdResult {
+  company: Company
+  episode: Episode
+  movie: Movie
+  people: Person
+  series: Series
 }
 
 type Episode {
@@ -543,6 +591,30 @@ type Query {
   person(id: Int!): Person
   list(id: Int!): List
   listBySlug(slug: String!): List
+  seriesBySlug(slug: String!): Series
+  filterSeries(
+    country: String!
+    lang: String!
+    genre: Int
+    year: Int
+    company: Int
+    status: Int
+    "score | firstAired | lastAired | name"
+    sort: String
+    "asc | desc"
+    sortType: String
+    page: Int
+  ): [Series]!
+  award(id: Int!): Award
+  awardCategory(id: Int!): AwardCategory
+  company(id: Int!): Company
+  character(id: Int!): Character
+  seriesTranslation(id: Int!, language: String!): Translation
+  movieTranslation(id: Int!, language: String!): Translation
+  episodeTranslation(id: Int!, language: String!): Translation
+  seasonTranslation(id: Int!, language: String!): Translation
+  peopleTranslation(id: Int!, language: String!): Translation
+  searchByRemoteId(remoteId: String!): [RemoteIdResult]!
 }
 
 type Mutation {

@@ -5,6 +5,14 @@ const seriesResolver = {
       return response.data;
     },
     seriesInfo: async (_, { id }) => ({ id }),
+    seriesBySlug: async (_, { slug }, { dataSources }) => {
+      const response = await dataSources.tvdbAPI.getSeriesBySlug(slug);
+      return response.data;
+    },
+    filterSeries: async (_, args, { dataSources }) => {
+      const response = await dataSources.tvdbAPI.filterSeries(args);
+      return response.data;
+    },
   },
   SeriesResponse: {
     series: async (parent, _, { dataSources }) => {

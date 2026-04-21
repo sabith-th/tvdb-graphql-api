@@ -86,6 +86,61 @@ class TvdbAPI extends RESTDataSource {
   async getListBySlug(slug) {
     return this.get(`lists/slug/${slug}`);
   }
+
+  async getSeriesBySlug(slug) {
+    return this.get(`series/slug/${slug}`);
+  }
+
+  async filterSeries({ country, lang, genre, year, company, status, sort, sortType, page = 0 }) {
+    const params = new URLSearchParams({ country, lang, page });
+    if (genre) params.append('genre', genre);
+    if (year) params.append('year', year);
+    if (company) params.append('company', company);
+    if (status) params.append('status', status);
+    if (sort) params.append('sort', sort);
+    if (sortType) params.append('sortType', sortType);
+    return this.get(`series/filter?${params.toString()}`);
+  }
+
+  async getAward(id) {
+    return this.get(`awards/${id}/extended`);
+  }
+
+  async getAwardCategory(id) {
+    return this.get(`awards/categories/${id}/extended`);
+  }
+
+  async getCompany(id) {
+    return this.get(`companies/${id}`);
+  }
+
+  async getCharacter(id) {
+    return this.get(`characters/${id}`);
+  }
+
+  async getSeriesTranslation(id, language) {
+    return this.get(`series/${id}/translations/${language}`);
+  }
+
+  async getMovieTranslation(id, language) {
+    return this.get(`movies/${id}/translations/${language}`);
+  }
+
+  async getEpisodeTranslation(id, language) {
+    return this.get(`episodes/${id}/translations/${language}`);
+  }
+
+  async getSeasonTranslation(id, language) {
+    return this.get(`seasons/${id}/translations/${language}`);
+  }
+
+  async getPeopleTranslation(id, language) {
+    return this.get(`people/${id}/translations/${language}`);
+  }
+
+  async searchByRemoteId(remoteId) {
+    return this.get(`search/remoteid/${remoteId}`);
+  }
 }
 
 export default TvdbAPI;

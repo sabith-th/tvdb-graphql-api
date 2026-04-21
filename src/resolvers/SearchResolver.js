@@ -4,6 +4,10 @@ const SearchResolver = {
       const response = await dataSources.tvdbAPI.searchSeries(name);
       return response.data;
     },
+    searchByRemoteId: async (_, { remoteId }, { dataSources }) => {
+      const response = await dataSources.tvdbAPI.searchByRemoteId(remoteId);
+      return response.data;
+    },
   },
 };
 
