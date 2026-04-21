@@ -141,6 +141,33 @@ class TvdbAPI extends RESTDataSource {
   async searchByRemoteId(remoteId) {
     return this.get(`search/remoteid/${remoteId}`);
   }
+
+  async getGenres() {
+    return this.get('genres');
+  }
+
+  async getGenre(id) {
+    return this.get(`genres/${id}`);
+  }
+
+  async getLanguages() {
+    return this.get('languages');
+  }
+
+  async getCountries() {
+    return this.get('countries');
+  }
+
+  async getContentRatings() {
+    return this.get('content/ratings');
+  }
+
+  async getUpdates({ since, type, action, page = 0 }) {
+    const params = new URLSearchParams({ since, page });
+    if (type) params.append('type', type);
+    if (action) params.append('action', action);
+    return this.get(`updates?${params.toString()}`);
+  }
 }
 
 export default TvdbAPI;

@@ -1,4 +1,5 @@
 import AwardResolver from './AwardResolver';
+import ReferenceResolver from './ReferenceResolver';
 import CharacterResolver from './CharacterResolver';
 import CompanyResolver from './CompanyResolver';
 import EpisodeResolver from './EpisodeResolver';
@@ -26,6 +27,7 @@ const resolvers = [
   CompanyResolver,
   CharacterResolver,
   TranslationResolver,
+  ReferenceResolver,
 ];
 
 export default resolvers;

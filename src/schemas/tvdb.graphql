@@ -157,6 +157,7 @@ type FilterKeys {
 type Genre {
   id: Int!
   name: String
+  slug: String
 }
 
 type JSONErrors {
@@ -169,10 +170,10 @@ type JSONErrors {
 }
 
 type Language {
-  abbreviation: String!
-  englishName: String!
-  id: Int!
-  name: String!
+  id: String!
+  name: String
+  nativeName: String
+  shortCode: String
 }
 
 type LanguageData {
@@ -325,6 +326,7 @@ type SeriesImagesQueryParams {
 type ContentRating {
   id: Int
   name: String
+  description: String
   country: String
   contentType: String
   order: Int
@@ -476,6 +478,26 @@ type Token {
   token: String!
 }
 
+type Country {
+  id: String!
+  name: String
+  shortCode: String
+}
+
+type EntityUpdate {
+  entityType: String
+  extraInfo: String
+  mergeToEntityType: String
+  mergeToId: Int
+  method: String
+  methodInt: Int
+  recordId: Int
+  recordType: String
+  seriesId: Int
+  timeStamp: Int
+  userId: Int
+}
+
 type Update {
   id: Int!
   lastUpdated: Int!
@@ -615,6 +637,18 @@ type Query {
   seasonTranslation(id: Int!, language: String!): Translation
   peopleTranslation(id: Int!, language: String!): Translation
   searchByRemoteId(remoteId: String!): [RemoteIdResult]!
+  genres: [Genre]!
+  genre(id: Int!): Genre
+  languages: [Language]!
+  countries: [Country]!
+  contentRatings: [ContentRating]!
+  updates(
+    "Unix timestamp — return entities updated since this time"
+    since: Int!
+    type: String
+    action: String
+    page: Int
+  ): [EntityUpdate]!
 }
 
 type Mutation {
