@@ -58,6 +58,34 @@ class TvdbAPI extends RESTDataSource {
   async getSeriesNextAired(id) {
     return this.get(`series/${id}/nextAired`);
   }
+
+  async getMovie(id) {
+    return this.get(`movies/${id}/extended`);
+  }
+
+  async getMovieBySlug(slug) {
+    return this.get(`movies/slug/${slug}`);
+  }
+
+  async searchMovies(name) {
+    return this.get(`search?query=${name}&type=movie`);
+  }
+
+  async getSeason(id) {
+    return this.get(`seasons/${id}/extended`);
+  }
+
+  async getPerson(id) {
+    return this.get(`people/${id}/extended`);
+  }
+
+  async getList(id) {
+    return this.get(`lists/${id}/extended`);
+  }
+
+  async getListBySlug(slug) {
+    return this.get(`lists/slug/${slug}`);
+  }
 }
 
 export default TvdbAPI;

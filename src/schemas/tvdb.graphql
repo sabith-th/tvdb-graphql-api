@@ -36,14 +36,23 @@ type Conflict {
 }
 
 type Character {
+  aliases: [Alias]
+  episodeId: Int
   id: Int!
   image: String
   isFeatured: Boolean
+  movieId: Int
   name: String
+  nameTranslations: [String]
+  overviewTranslations: [String]
   peopleId: Int
   peopleType: String
   personImgURL: String
   personName: String
+  seriesId: Int
+  sort: Int
+  type: Int
+  url: String
 }
 
 type Company {
@@ -265,6 +274,139 @@ type SeriesImagesQueryParams {
   data: [SeriesImagesQueryParam]!
 }
 
+type ContentRating {
+  id: Int
+  name: String
+  country: String
+  contentType: String
+  order: Int
+  fullName: String
+}
+
+type Release {
+  country: String
+  date: String
+  detail: String
+}
+
+type RemoteID {
+  id: String!
+  type: Int
+  sourceName: String
+}
+
+type SeasonType {
+  id: Int
+  name: String
+  type: String
+  alternateName: String
+}
+
+type Trailer {
+  id: Int!
+  language: String
+  name: String
+  url: String
+  runtime: Int
+}
+
+type Movie {
+  aliases: [Alias]
+  artworks: [Artwork]
+  audioLanguages: [String]
+  awards: [Award]
+  boxOffice: String
+  budget: String
+  characters: [Character]
+  contentRatings: [ContentRating]
+  genres: [Genre]
+  id: Int!
+  image: String
+  lastUpdated: String
+  name: String!
+  nameTranslations: [String]
+  originalCountry: String
+  originalLanguage: String
+  overviewTranslations: [String]
+  releases: [Release]
+  remoteIds: [RemoteID]
+  runtime: Int
+  score: Float
+  slug: String
+  status: Status
+  subtitleLanguages: [String]
+  trailers: [Trailer]
+  year: String
+}
+
+type MovieSearchResult {
+  aliases: [String]
+  id: String!
+  image_url: String
+  name: String!
+  overview: String
+  slug: String
+  status: String
+  tvdb_id: String!
+  year: String
+}
+
+type Season {
+  artworks: [Artwork]
+  episodes: [BasicEpisode]
+  id: Int!
+  image: String
+  imageType: Int
+  lastUpdated: String
+  name: String
+  nameTranslations: [String]
+  number: Int
+  overviewTranslations: [String]
+  seriesId: Int
+  type: SeasonType
+  year: String
+}
+
+type Person {
+  aliases: [Alias]
+  awards: [Award]
+  birth: String
+  birthPlace: String
+  characters: [Character]
+  death: String
+  gender: Int
+  id: Int!
+  image: String
+  lastUpdated: String
+  name: String!
+  nameTranslations: [String]
+  overviewTranslations: [String]
+  remoteIds: [RemoteID]
+  score: Int
+  slug: String
+}
+
+type ListEntity {
+  id: Int
+  movieId: Int
+  order: Int
+  seriesId: Int
+}
+
+type List {
+  aliases: [Alias]
+  entities: [ListEntity]
+  id: Int!
+  image: String
+  isOfficial: Boolean
+  name: String!
+  nameTranslations: [String]
+  overview: String
+  overviewTranslations: [String]
+  score: Int
+  url: String
+}
+
 type SeriesSearchResult {
   aliases: [String]
   image_url: String
@@ -394,6 +536,13 @@ type Query {
     seasonType: String
     page: Int
   ): [BasicEpisode]!
+  movie(id: Int!): Movie
+  movieBySlug(slug: String!): Movie
+  searchMovies(name: String!): [MovieSearchResult]!
+  season(id: Int!): Season
+  person(id: Int!): Person
+  list(id: Int!): List
+  listBySlug(slug: String!): List
 }
 
 type Mutation {
