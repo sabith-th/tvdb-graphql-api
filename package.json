@@ -15,7 +15,7 @@
   "dependencies": {
     "@apollo/datasource-rest": "^6.4.1",
     "@apollo/server": "^5.5.1",
-    "@upstash/redis": "^1.37.0",
+    "@upstash/redis": "^1.38.0",
     "axios": "^1.16.0",
     "dotenv": "^17.4.2",
     "graphql": "^16.13.2",
