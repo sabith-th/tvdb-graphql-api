@@ -30,7 +30,7 @@
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.29.7",
-    "@babel/node": "^7.29.0",
+    "@babel/node": "^7.29.7",
     "@babel/preset-env": "^7.29.5",
     "eslint": "8.57.1",
     "eslint-config-airbnb": "^19.0.4",
