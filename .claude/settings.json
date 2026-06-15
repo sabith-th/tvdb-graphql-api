@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(node -e 'const j=JSON.parse(require(\"fs\").readFileSync(0,\"utf8\"));process.stdout.write(j.tool_input?.file_path||j.tool_response?.filePath||\"\")'); case \"$f\" in */src/*.js) cd \"${CLAUDE_PROJECT_DIR:-.}\" && pnpm exec eslint --fix \"$f\" 2>/dev/null || true;; esac",
+            "statusMessage": "eslint --fix"
+          }
+        ]
+      }
+    ]
+  }
+}
