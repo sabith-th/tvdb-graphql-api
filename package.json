@@ -23,7 +23,9 @@
   },
   "pnpm": {
     "overrides": {
-      "picomatch": "^2.3.2"
+      "picomatch": "^2.3.2",
+      "js-yaml": "^4.2.0",
+      "qs": "^6.15.2"
     }
   },
   "devDependencies": {
