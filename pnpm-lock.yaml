@@ -70,7 +70,7 @@ importers:
         version: 6.10.2(eslint@8.57.1)
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.8.4)
+        version: 5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.9.1)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -78,8 +78,8 @@ importers:
         specifier: ^3.1.14
         version: 3.1.14
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.9.1
+        version: 3.9.1
 
 packages:
 
@@ -2648,7 +2648,7 @@ packages:
       string.prototype.includes: 2.0.1
     dev: true
 
-  /eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.8.4):
+  /eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.1)(prettier@3.9.1):
     resolution: {integrity: sha512-ifetmTcxWfz+4qRW3pH/ujdTq2jQIj59AxJMIN26K5avYgU8dxycUETQonWiW+wPrYXA0j3Try0l1CnwVQtDqQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2664,7 +2664,7 @@ packages:
     dependencies:
       eslint: 8.57.1
       eslint-config-prettier: 10.1.8(eslint@8.57.1)
-      prettier: 3.8.4
+      prettier: 3.9.1
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     dev: true
@@ -3677,8 +3677,8 @@ packages:
       semver: 5.7.2
     dev: true
 
-  /node-exports-info@1.6.0:
-    resolution: {integrity: sha512-pyFS63ptit/P5WqUkt+UUfe+4oevH+bFeIiPPdfb0pFeYEu/1ELnJu5l+5EcTKYL5M7zaAa7S8ddywgXypqKCw==}
+  /node-exports-info@1.6.2:
+    resolution: {integrity: sha512-kXs9Go0cah0qHVV2v389IXQLdLCeE1xfFtjOAF+iobu0OIoG1pje8At2vMHyaPMiPMnG/LWP50twML21eMcAag==}
     engines: {node: '>= 0.4'}
     dependencies:
       array.prototype.flatmap: 1.3.3
@@ -3983,8 +3983,8 @@ packages:
       fast-diff: 1.3.0
     dev: true
 
-  /prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  /prettier@3.9.1:
+    resolution: {integrity: sha512-ppiDo2CSwexck1eyZUwJHg/N3nf1+6IRCv7W/VJ5vaLnVCmB7+3CdRfMwoCHBBX6xTrREDTksZ4OZl5SSf4zXA==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -4140,7 +4140,7 @@ packages:
     dependencies:
       es-errors: 1.3.0
       is-core-module: 2.16.2
-      node-exports-info: 1.6.0
+      node-exports-info: 1.6.2
       object-keys: 1.1.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
