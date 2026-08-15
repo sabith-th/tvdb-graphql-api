@@ -4,6 +4,9 @@
   "main": "src/index.js",
   "license": "MIT",
   "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "precommit": "pnpm run lint",

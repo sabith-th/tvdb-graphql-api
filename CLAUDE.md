@@ -18,7 +18,7 @@ Requires a `.env` file with `API_KEY` (TVDB v4 API key), `UPSTASH_REDIS_KV_REST_
 
 ## Architecture
 
-This is a **GraphQL API wrapper** over The TVDB v4 REST API, built with Apollo Server 5 and deployed serverlessly on Vercel. It's plain JavaScript (no TypeScript) transpiled with Babel targeting Node.js 20.
+This is a **GraphQL API wrapper** over The TVDB v4 REST API, built with Apollo Server 5 and deployed serverlessly on Vercel. It's plain JavaScript (no TypeScript) transpiled with Babel targeting Node.js 24.
 
 **Request flow:**
 1. Client sends GraphQL query with a Bearer token in the `Authorization` header
